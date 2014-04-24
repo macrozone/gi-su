@@ -18,14 +18,11 @@
 ******************************/
 
 
-/* Background */
-.rsWinkler,
-.rsWinkler .rsOverflow,
-.rsWinkler .rsSlide,
-.rsWinkler .rsVideoFrameHolder,
-.rsWinkler .rsThumbs {
 
-	color: #FFF;
+
+.rsWinkler
+{
+	margin-bottom: 80px;
 }
 
 
@@ -101,13 +98,12 @@
 	position: absolute;
 	z-index: 35;
 	left: 0;
-	bottom: 0;
+	bottom: -53px;
 	width: 100%;
 	height: auto;
 	margin: 0 auto; 
 
-	background: #000;
-	background: rgba(0,0,0,0.75);
+	
 
 	text-align: center;
 	line-height: 8px;
@@ -119,7 +115,8 @@
 	display: inline-block;
 	*display:inline; 
 	*zoom:1;
-	padding: 6px 5px 6px;
+	padding: 10px 10px 10px;
+
 }
 .rsWinkler .rsBullet span {
 	display: block;
@@ -127,10 +124,12 @@
 	height: 8px;
 	border-radius: 50%;
 	background: #777;
-	background: rgba(255,255,255,0.5);
+
+	
 }
 .rsWinkler .rsBullet.rsNavSelected span {
 	background-color: #FFF;
+	border: 1px solid #777;
 }
 
 
@@ -171,6 +170,7 @@
 .rsWinkler .rsThumb img {
 	width: 100%;
 	height: 100%;
+
 }
 .rsWinkler .rsThumb.rsNavSelected {
 	background: #a7a1a7;
@@ -259,6 +259,12 @@
 	}
 }
 
+
+.rsWinkler .rsImg
+{
+		border-radius: 50%;
+		opacity: 1 !important;
+}
 
 
 
@@ -472,12 +478,10 @@
 .rsWinkler .rsGCaption {
 	position: absolute;
 	float: none;
-	bottom: 0px;
+	bottom: -40px;
 	left: 0px;
 	text-align: left;
 
-	background: rgb(0, 0, 0);
-    background: rgba(0, 0, 0, 0.5);
 
 	color: #white;
 	padding: 8px 0px;

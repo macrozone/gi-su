@@ -132,7 +132,7 @@ function showPagesWithParent($parentID, $excludeSlugs = array())
 	<main id="main" class="site-main" role="main">
 
 	<section class="page home depth-0">
-	<h2 class="pageTitle">A/W 13/14</h2>
+	<div class="circle"><div class = "circle-inner"></div></div>
 	</section>
 
 		<?php

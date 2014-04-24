@@ -1,5 +1,6 @@
 jQuery(function($)
 {
+	var $body = $("body");
 	var autoSetHashEnabled = true;
 
 	var selectPageInMenu = function(page)
@@ -71,56 +72,16 @@ jQuery(function($)
 	}
 	$("#main-menu li a").on("click", function()
 	{
-		$("body").removeClass("menu-visible");
+		//$body.removeClass("menu-visible");
 		var target = $(this).attr("href").substring(1);
 		scrollToPage(target)
 	});
 
-	$("#menu-button, #masthead .logo").on("click", function()
-	{
-
-		$("body").toggleClass("menu-visible");
-		return false;
-	});
 
 
-	Hammer(document.getElementById("menu-button")).on("swipeleft", function()
-	{
 
-		if(!$("body").hasClass("menu-visible"))
-		{
 
-			$("body").addClass("menu-visible");
-			return false;
-		}
-		else 
-			return true;
-
-	});
-
-	Hammer(document.body).on("swiperight", function()
-	{
-		if($("body").hasClass("menu-visible"))
-		{
-
-			$("body").removeClass("menu-visible");
-			return false;
-		}
-		else 
-			return true;
-
-	});
-	$("body").on("click", function()
-	{
-		if($("body").hasClass("menu-visible"))
-		{
-
-			$("body").removeClass("menu-visible");
-			return false;
-		}
-		else 
-			return true;
-	});
+	
 
 	$(".page.depth-2").on("click", ".pageTitle",function(event)
 	{
@@ -150,12 +111,77 @@ jQuery(function($)
 	scrollToPage(window.location.hash.substring(1))
 	
 
-
-
-	$(document).keypress(function(e) {
-		
-		if(e.which == 105) {
-			$("body").toggleClass("invertMode");
+	$(window).on("keypress", function(event)
+	{
+		if(event.which == 105)
+		{
+			$body.toggleClass("inverted");
 		}
 	});
+
+	/** toggle / gallery fix **/
+
+
+	$(".omsc-toggle-title").on("click", function(event){
+
+		var $this = $(this);
+		var $parent = $this.parent();
+
+		var slider = $parent.find(".royalSlider").data('royalSlider');
+		_.defer(function()
+		{
+slider.updateSliderSize(); 
+		});
+
+});
+
+
+
+	/** fading background **/
+
+	var addFadingBodyBackground = function()
+	{
+		var $container = $('<div class="fadingBackground" />');
+		var backgrounds = _.shuffle(["wp-content/uploads/backgrounds/1.jpg","wp-content/uploads/backgrounds/2.jpg","wp-content/uploads/backgrounds/3.jpg", "wp-content/uploads/backgrounds/4.jpg"]);
+		var index = 0;
+		var $inner1 = $('<div class="inner"/>');
+		var $inner2 = $('<div class="inner"/>');
+		$container.append($inner1).append($inner2);
+		$body.append($container);
+		var fade = function()
+		{
+
+			var $active = $container.find(".inner.active");
+			var $inactive = $container.find(".inner:not(.active)");
+			if($active.length == 0)
+			{
+			// this will add the active class later, creating an initial fading effect
+			$active = $inner1;
+			$inactive = $inner2;
+
+		}
+
+		background = backgrounds[index];
+		$inactive.css("background-image", "url("+background+")");
+		
+		index = (index+1)%backgrounds.length;
+
+		$active.removeClass("active");
+
+		$inactive.addClass("active");
+
+
+	}
+
+	window.setInterval(fade, 8000);
+	_.defer(fade);
+
+	
+
+}
+
+
+addFadingBodyBackground();
+
+
 });

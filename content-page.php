@@ -4,10 +4,16 @@
  *
  * @package gisu
  */
+
+$templates = array(
+	"white", "black")
+
 ?>
 
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="page-header">
+<div class="content">
+	<!--<header class="page-header">
 		<h1 class="page-title"><?php the_title(); ?></h1>
 	</header><!-- .entry-header -->
 
@@ -20,5 +26,6 @@
 			) );
 		?>
 	</div><!-- .entry-content -->
-	<?php edit_post_link( __( 'Edit', 'gisu' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
+	<!--<?php edit_post_link( __( 'Edit', 'gisu' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>-->
+	</div>
 </article><!-- #post-## -->

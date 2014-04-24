@@ -110,10 +110,6 @@ function gisu_scripts() {
 	wp_enqueue_script( 'gisu-jquery-scrollTo', get_template_directory_uri() . '/includes/js/jquery.scrollTo.min.js', array('jquery') );
 
 	wp_enqueue_script( 'gisu-init', get_template_directory_uri() . '/includes/js/init.js', array('jquery') );
-	wp_enqueue_script( 'gisu-intro', get_template_directory_uri() . '/includes/js/intro.js', array('jquery') );
- // hammer time
-	wp_enqueue_script('gisu-hamer', get_template_directory_uri().'/includes/js/hammer.min.js', array('jquery') );
-
 	wp_enqueue_script( 'gisu-skip-link-focus-fix', get_template_directory_uri() . '/includes/js/skip-link-focus-fix.js', array(), '20130115', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

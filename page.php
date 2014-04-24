@@ -10,6 +10,17 @@
  * @package gisu
  */
 
+function inverted_body_class($classes) {
+	// add 'class-name' to the $classes array
+
+	if ($classes[0] != "home" && rand(0, 1))
+		$classes[] = 'inverted';
+	// return the $classes array
+	return $classes;
+}
+
+add_filter('body_class','inverted_body_class');
+
 get_header(); ?>
 
 	<?php while ( have_posts() ) : the_post(); ?>
@@ -24,5 +35,5 @@ get_header(); ?>
 
 	<?php endwhile; // end of the loop. ?>
 
-<?php get_sidebar(); ?>
+
 <?php get_footer(); ?>
