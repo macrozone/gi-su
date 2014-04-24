@@ -1,4 +1,4 @@
-@import url(includes/css/bootstrap-wp.css);
+
 
 @paddingMobile: 20px;
 @paddingNormal: 40px;
@@ -146,11 +146,12 @@ embed,iframe,object {
     left: 0px;
     right: 0px;
     padding: 20px @paddingNormal;
-    height: 110px;
+    height: 90px;
     * {
         pointer-events: auto;
     }
     .logo {
+        margin: 0px;
        z-index: 220;
        width: 210px;
        padding-right: 20px;
@@ -259,9 +260,10 @@ body.menu-visible {
 }
 article {
     .content {
-        margin-top: 120px;
+        padding-top: 90px;
         margin-left: @paddingNormal;
         margin-right: @paddingNormal;
+
 
         p, h1, h2, h3, h4, ul
         {
@@ -271,6 +273,7 @@ article {
 }
 
 .omsc-accordion {
+    margin-top: 0px;
     margin-left: -@paddingNormal;
     margin-right: -@paddingNormal;
 }
@@ -332,14 +335,18 @@ article {
 @media screen and (max-width: @mobileWidth) {
 
 
+    #masthead
+    {
+        padding: 20px @paddingMobile;
+    }
     #main-menu {
         position: absolute;
-        padding-top: 100px;
-        padding-left: @paddingNormal;
+        padding-top: 58px;
+        padding-left: @paddingMobile;
         padding-bottom: 20px;
         left: 0px;
         top: 0px;
-        background-color: transparent;
+        background-color: black;
         right: 0px;
         -ms-transform: translate(0px,-100%); /* IE 9 */
         -webkit-transform: translate(0px,-100%); /* Chrome, Safari, Opera */
@@ -362,9 +369,13 @@ article {
 
 }
 @media only screen and (max-width: @mobileWidth) {
+
+    body {
+        font-size: 14px;
+    }
     article .content
     {
-        margin-top: 70px;
+       
         margin-left: @paddingMobile;
         margin-right: @paddingMobile;
     }

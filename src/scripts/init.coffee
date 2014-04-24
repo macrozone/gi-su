@@ -4,6 +4,9 @@ jQuery ($) ->
 		$("body").toggleClass "inverted"  if event.which is 105
 	
 
+	$(".logo").on "click", ->
+		$("body").toggleClass "menu-visible"
+
 	###
 	toggle / gallery fix *
 	###
@@ -11,6 +14,6 @@ jQuery ($) ->
 		$this = $(this)
 		$parent = $this.parent()
 		slider = $parent.find(".royalSlider").data("royalSlider")
-		_.defer ->
+		if slider? then _.defer ->
 			slider.updateSliderSize()
  

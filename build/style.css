@@ -1,4 +1,3 @@
-@import url(includes/css/bootstrap-wp.css);
 @font-face {
   font-family: 'gisu';
   src: url('fonts/gisu.eot');
@@ -137,12 +136,13 @@ object {
   left: 0px;
   right: 0px;
   padding: 20px 40px;
-  height: 110px;
+  height: 90px;
 }
 #masthead * {
   pointer-events: auto;
 }
 #masthead .logo {
+  margin: 0px;
   z-index: 220;
   width: 210px;
   padding-right: 20px;
@@ -242,7 +242,7 @@ body.menu-visible #main-menu {
   transform: translate(0px, 0%);
 }
 article .content {
-  margin-top: 120px;
+  padding-top: 90px;
   margin-left: 40px;
   margin-right: 40px;
 }
@@ -255,6 +255,7 @@ article .content ul {
   max-width: 640px;
 }
 .omsc-accordion {
+  margin-top: 0px;
   margin-left: -40px;
   margin-right: -40px;
 }
@@ -311,14 +312,17 @@ article .content ul {
   opacity: 1;
 }
 @media screen and (max-width: 640px) {
+  #masthead {
+    padding: 20px 20px;
+  }
   #main-menu {
     position: absolute;
-    padding-top: 100px;
-    padding-left: 40px;
+    padding-top: 58px;
+    padding-left: 20px;
     padding-bottom: 20px;
     left: 0px;
     top: 0px;
-    background-color: transparent;
+    background-color: black;
     right: 0px;
     -ms-transform: translate(0px, -100%);
     /* IE 9 */
@@ -337,8 +341,10 @@ article .content ul {
   }
 }
 @media only screen and (max-width: 640px) {
+  body {
+    font-size: 14px;
+  }
   article .content {
-    margin-top: 70px;
     margin-left: 20px;
     margin-right: 20px;
   }
