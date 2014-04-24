@@ -95,21 +95,14 @@ function gisu_scripts() {
 
     // load bootstrap css
 	wp_enqueue_style( 'gisu-bootstrap', get_template_directory_uri() . '/includes/resources/bootstrap/css/bootstrap.css' );
-		wp_enqueue_style( 'gisu-intro-css', get_template_directory_uri() . '/includes/css/intro.css' );
+	
 
     // load gisu styles
 	wp_enqueue_style( 'gisu-style', get_stylesheet_uri() );
 
-	wp_enqueue_script('gisu-underscore', get_template_directory_uri().'/includes/js/underscore-min.js' );
 
-    // load bootstrap js
-	wp_enqueue_script('gisu-bootstrapjs', get_template_directory_uri().'/includes/resources/bootstrap/js/bootstrap.js', array('jquery') );
 
-    // load bootstrap wp js
-	wp_enqueue_script( 'gisu-bootstrapwp', get_template_directory_uri() . '/includes/js/bootstrap-wp.js', array('jquery') );
-	wp_enqueue_script( 'gisu-jquery-scrollTo', get_template_directory_uri() . '/includes/js/jquery.scrollTo.min.js', array('jquery') );
-
-	wp_enqueue_script( 'gisu-init', get_template_directory_uri() . '/includes/js/init.js', array('jquery') );
+	wp_enqueue_script( 'gisu-scripts', get_template_directory_uri() . '/build/scripts.js', array('jquery') );
 	wp_enqueue_script( 'gisu-skip-link-focus-fix', get_template_directory_uri() . '/includes/js/skip-link-focus-fix.js', array(), '20130115', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
