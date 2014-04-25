@@ -4,7 +4,7 @@ jQuery ($) ->
 		$("body").toggleClass "inverted"  if event.which is 105
 	
 
-	$(".logo").on "click", ->
+	$(".logo, #menu-button").on "click", ->
 		$("body").toggleClass "menu-visible"
 
 	###

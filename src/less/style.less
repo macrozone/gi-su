@@ -258,8 +258,31 @@ body.home {
     text-decoration: none;
 }
 
+#menu-button
+{
+    display: none;
+    z-index:110;
+    @size: 5px;
+  position: relative;
+ float: right;
+ cursor: pointer;
 
-.main-content,  #menu-button,  #main-menu, #masthead .logo {
+
+  width: 5*@size;
+  height: 5*@size;
+
+
+
+  border-top: 3*@size double black;
+  border-bottom: @size solid black;
+
+  .inverted &
+  {
+    border-color: white;
+  }
+}
+
+#main-menu, #masthead .logo {
     -webkit-transition: 0.3s -webkit-transform;
     -moz-transition: 0.3s;
     -ms-ransition: 0.3s -ms-transform;
@@ -361,25 +384,28 @@ article {
         padding-bottom: 20px;
         left: 0px;
         top: 0px;
-        background-color: black;
+        background-color: white;
         right: 0px;
         -ms-transform: translate(0px,-100%); /* IE 9 */
         -webkit-transform: translate(0px,-100%); /* Chrome, Safari, Opera */
         transform: translate(0px,-100%);
     }
 
-    #main-menu ul li a {
-        color: white;
-    }
 
 
     .inverted #main-menu {
-        background-color: white;
+        background-color: black;
     }
 
-    .inverted #main-menu ul li a {
-        color: black;
-    }
+   .home #main-menu
+   {
+background-color: transparent !important;
+color: white !important;
+   }
+
+   #menu-button {
+    display: block;
+   }
 
 
 }
