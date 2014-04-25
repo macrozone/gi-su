@@ -139,6 +139,8 @@ embed,iframe,object {
     }
 }
 #masthead {
+    background-color: white;
+    color: black;
     pointer-events: none;
     position: fixed;
     z-index: 200;
@@ -178,43 +180,15 @@ embed,iframe,object {
 .omsc-toggle-title:after {
     display: none;
 }
-body.inverted {
-    #masthead {
-        color: black;
-    }
-}
+
+
 .omsc-toggle:nth-child(even) {
-    background-color: transparent;
-    color: white;
-}
-.omsc-toggle:nth-child(odd) {
     background-color: white;
     color: black;
 }
-.inverted {
-    #masthead {
-        background-color: white;
-    }
-    #main-menu {
-        ul {
-            li {
-                a {
-                    color: black;
-                }
-            }
-        }
-    }
-    .omsc-toggle:nth-child(odd) {
-        background-color: transparent;
-        color: white;
-    }
-    .omsc-toggle:nth-child(even) {
-        background-color: white;
-        color: black;
-    }
-    .circle-inner {
-        background-color: white;
-    }
+.omsc-toggle:nth-child(odd) {
+    background-color: black;
+    color: white;
 }
 #main-menu {
     padding-left: 0px;
@@ -230,7 +204,7 @@ body.inverted {
             padding-right: 16px;
             float: left;
             a {
-                color: white;
+                color: black;
                 font-size: 15px;
                 border-bottom: none;
             }
@@ -240,10 +214,50 @@ body.inverted {
         display: none;
     }
 }
+
+
+
+body.inverted {
+    background-color: white;
+    color: black;
+    #masthead {
+        background-color: black;
+        color: white;
+    }
+    #main-menu ul li a 
+    {
+                    color: white;
+                }
+          
+    .omsc-toggle:nth-child(odd) {
+        background-color: white;
+        color: black;
+    }
+    .omsc-toggle:nth-child(even) {
+        background-color: black;
+        color: white;
+    }
+    .circle-inner {
+        background-color: white;
+    }
+}
+body.home {
+    background-color: black;
+    color: white;
+    #masthead
+    {
+        background-color: transparent;
+        color: white;
+        ul li a {
+            color: white;
+        }
+    }
+}
 #main-menu ul li a.active, #main-menu ul li a:hover, #main-menu ul li.current_page_item a {
-    color: #999;
+    color: #999 !important;
     text-decoration: none;
 }
+
 
 .main-content,  #menu-button,  #main-menu, #masthead .logo {
     -webkit-transition: 0.3s -webkit-transform;

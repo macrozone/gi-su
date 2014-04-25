@@ -129,6 +129,8 @@ object {
   margin-left: 1.5em;
 }
 #masthead {
+  background-color: white;
+  color: black;
   pointer-events: none;
   position: fixed;
   z-index: 200;
@@ -169,33 +171,13 @@ object {
 .omsc-toggle-title:after {
   display: none;
 }
-body.inverted #masthead {
-  color: black;
-}
 .omsc-toggle:nth-child(even) {
-  background-color: transparent;
-  color: white;
+  background-color: white;
+  color: black;
 }
 .omsc-toggle:nth-child(odd) {
-  background-color: white;
-  color: black;
-}
-.inverted #masthead {
-  background-color: white;
-}
-.inverted #main-menu ul li a {
-  color: black;
-}
-.inverted .omsc-toggle:nth-child(odd) {
-  background-color: transparent;
+  background-color: black;
   color: white;
-}
-.inverted .omsc-toggle:nth-child(even) {
-  background-color: white;
-  color: black;
-}
-.inverted .circle-inner {
-  background-color: white;
 }
 #main-menu {
   padding-left: 0px;
@@ -213,17 +195,50 @@ body.inverted #masthead {
   float: left;
 }
 #main-menu ul li a {
-  color: white;
+  color: black;
   font-size: 15px;
   border-bottom: none;
 }
 #main-menu .children {
   display: none;
 }
+body.inverted {
+  background-color: white;
+  color: black;
+}
+body.inverted #masthead {
+  background-color: black;
+  color: white;
+}
+body.inverted #main-menu ul li a {
+  color: white;
+}
+body.inverted .omsc-toggle:nth-child(odd) {
+  background-color: white;
+  color: black;
+}
+body.inverted .omsc-toggle:nth-child(even) {
+  background-color: black;
+  color: white;
+}
+body.inverted .circle-inner {
+  background-color: white;
+}
+body.home {
+  background-color: black;
+  color: white;
+}
+body.home #masthead {
+  background-color: transparent;
+  color: white;
+}
+body.home #masthead ul li a {
+  color: white;
+}
 #main-menu ul li a.active,
 #main-menu ul li a:hover,
 #main-menu ul li.current_page_item a {
-  color: #999;
+  color: #999 !important;
   text-decoration: none;
 }
 .main-content,
