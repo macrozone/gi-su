@@ -25,19 +25,19 @@
 	<?php do_action( 'before' ); ?>
 	
 	<header id="masthead" class="site-header" role="banner">
-	
- 	<!--<img class="logo" src="<?php echo get_bloginfo('template_url') ?>/includes/resources/images/logo.png"/>-->
-<h1 class="logo">GI-SU</h1>
 
-					
-				
+	<div class="logo" ></div>
+		
+
+
+
 
 		<a id="menu-button"></a>
 		
 
 		<nav id="main-menu" class="site-navigation">	
 
-<?php echo wp_nav_menu(); ?>
+			<?php echo wp_nav_menu(); ?>
 
 		</nav><!-- .site-navigation -->
 		<div class="clear"></div>

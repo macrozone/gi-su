@@ -1,16 +1,24 @@
 @font-face {
   font-family: 'gisu';
   src: url('fonts/gisu.eot');
-  src: url('fonts/gisu.eot?#iefix') format('embedded-opentype'), url('fonts/gisu.woff') format('woff'), url('fonts/gisu.ttf') format('truetype'), url('fonts/gisu.svg#WebfontRegular') format('svg');
+  src: url('fonts/gisu.eot') format('embedded-opentype'), url('fonts/gisu.woff') format('woff'), url('fonts/gisu.ttf') format('truetype'), url('fonts/gisu.svg#gisu') format('svg');
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'gisu';
+  src: url('fonts/gisu-italic.eot');
+  src: url('fonts/gisu-italic.eot') format('embedded-opentype'), url('fonts/gisu-italic.woff') format('woff'), url('fonts/gisu-italic.ttf') format('truetype'), url('fonts/gisu-italic.svg#gisu') format('svg');
+  font-weight: normal;
+  font-style: italic;
+}
 body {
+  font-family: gisu, sans-serif;
   word-wrap: break-word;
   letter-spacing: 1px;
   background-color: black;
   color: white;
-  font-size: 18px;
+  font-size: 20px;
 }
 .alignleft {
   display: inline;
@@ -137,8 +145,8 @@ object {
   top: 0px;
   left: 0px;
   right: 0px;
-  padding: 20px 40px;
-  height: 90px;
+  padding: 30px 50px;
+  height: 104px;
 }
 #masthead * {
   pointer-events: auto;
@@ -146,18 +154,26 @@ object {
 #masthead .logo {
   margin: 0px;
   z-index: 220;
-  width: 210px;
+  width: 180px;
+  height: 44px;
   padding-right: 20px;
   padding-bottom: 20px;
   position: relative;
   float: left;
+  background-size: 100%;
+  background-image: url(logo.png);
+  background-repeat: no-repeat;
+}
+.inverted #masthead .logo,
+.home #masthead .logo {
+  background-image: url(logo_white.png);
 }
 .omsc-toggle,
 .omsc-accordion {
   border: none;
 }
 .omsc-toggle-title {
-  padding: 16px 0px;
+  padding: 10px 0px;
   border: none;
   text-align: center;
 }
@@ -184,19 +200,23 @@ object {
   padding-top: 0px;
   padding-right: 0px;
   z-index: 100;
-  float: right;
+  position: absolute;
+  right: 0px;
+  top: 18px;
+  margin-left: 280px;
 }
 #main-menu ul {
   padding: 0px;
 }
 #main-menu ul li {
+  line-height: 22px;
   list-style: none;
   padding-right: 16px;
   float: left;
 }
 #main-menu ul li a {
   color: black;
-  font-size: 15px;
+  font-size: 17px;
   border-bottom: none;
 }
 #main-menu .children {
@@ -269,9 +289,9 @@ body.menu-visible #main-menu {
   transform: translate(0px, 0%);
 }
 article .content {
-  padding-top: 90px;
-  margin-left: 40px;
-  margin-right: 40px;
+  padding-top: 104px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 article .content p,
 article .content h1,
@@ -283,14 +303,15 @@ article .content ul {
 }
 .omsc-accordion {
   margin-top: 0px;
-  margin-left: -40px;
-  margin-right: -40px;
+  margin-left: -50px;
+  margin-right: -50px;
 }
 .royalSlider {
-  padding: -40px;
+  margin-top: -50px;
+  margin-bottom: -50px;
 }
 .omsc-toggle-inner {
-  padding: 40px;
+  padding: 50px;
 }
 .circle {
   top: 200px;
@@ -340,11 +361,13 @@ article .content ul {
 }
 @media screen and (max-width: 640px) {
   #masthead {
+    height: 90px;
     padding: 20px 20px;
   }
   #main-menu {
+    margin: 0px;
     position: absolute;
-    padding-top: 58px;
+    padding-top: 72px;
     padding-left: 20px;
     padding-bottom: 20px;
     left: 0px;
@@ -367,12 +390,11 @@ article .content ul {
   #menu-button {
     display: block;
   }
-}
-@media only screen and (max-width: 640px) {
   body {
     font-size: 14px;
   }
   article .content {
+    padding-top: 90px;
     margin-left: 20px;
     margin-right: 20px;
   }
@@ -381,7 +403,7 @@ article .content ul {
     margin-right: -20px;
   }
   .royalSlider {
-    padding: -20px;
+    margin-top: -20px;
   }
   .omsc-toggle-inner {
     padding: 20px;

@@ -145,9 +145,9 @@ require get_template_directory() . '/includes/jetpack.php';
 
 add_filter('new_royalslider_skins', 'new_royalslider_add_custom_skin', 10, 2);
 function new_royalslider_add_custom_skin($skins) {
-	$skins['rsWinkler'] = array(
-		'label' => 'winkler skin',
-           'path' => get_stylesheet_directory_uri() . '/royalslider-skin/winkler.css'  // get_stylesheet_directory_uri returns path to your theme folder
+	$skins['rsGisu'] = array(
+		'label' => 'Gisu skin',
+           'path' => get_stylesheet_directory_uri() . '/royalslider/gisu.css'  // get_stylesheet_directory_uri returns path to your theme folder
            );
 	return $skins;
 }
