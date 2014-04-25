@@ -150,6 +150,36 @@ object {
   position: relative;
   float: left;
 }
+.omsc-toggle,
+.omsc-accordion {
+  border: none;
+}
+.omsc-toggle-title {
+  padding: 16px 0px;
+  border: none;
+  text-align: center;
+}
+.omsc-toggle-title:hover,
+.omsc-toggle.omsc-expanded .omsc-toggle-title {
+  background: none;
+}
+.omsc-toggle-title:hover {
+  color: #999;
+}
+.omsc-toggle-title:after {
+  display: none;
+}
+body.inverted #masthead {
+  color: black;
+}
+.omsc-toggle:nth-child(even) {
+  background-color: transparent;
+  color: white;
+}
+.omsc-toggle:nth-child(odd) {
+  background-color: white;
+  color: black;
+}
 .inverted #masthead {
   background-color: white;
 }
@@ -195,36 +225,6 @@ object {
 #main-menu ul li.current_page_item a {
   color: #999;
   text-decoration: none;
-}
-.omsc-toggle,
-.omsc-accordion {
-  border: none;
-}
-.omsc-toggle-title {
-  padding: 16px 0px;
-  border: none;
-  text-align: center;
-}
-.omsc-toggle-title:hover,
-.omsc-toggle.omsc-expanded .omsc-toggle-title {
-  background: none;
-}
-.omsc-toggle-title:hover {
-  color: #999;
-}
-.omsc-toggle-title:after {
-  display: none;
-}
-body.inverted #masthead {
-  color: black;
-}
-.omsc-toggle:nth-child(even) {
-  background-color: transparent;
-  color: white;
-}
-.omsc-toggle:nth-child(odd) {
-  background-color: white;
-  color: black;
 }
 .main-content,
 #menu-button,
