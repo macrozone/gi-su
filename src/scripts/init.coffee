@@ -1,7 +1,8 @@
 jQuery ($) ->
 
 	$(window).on "keypress", (event) ->
-		$("body").toggleClass "inverted"  if event.which is 27
+		
+		$("body").toggleClass "inverted"  if event.which == 161
 	
 
 	$(".logo, #menu-button").on "click", ->
