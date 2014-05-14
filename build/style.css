@@ -1,3 +1,9 @@
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
 @font-face {
   font-family: 'gisu';
   src: url('fonts/gisu.eot');
@@ -18,7 +24,7 @@ body {
   letter-spacing: 1px;
   background-color: black;
   color: white;
-  font-size: 20px;
+  font-size: 16px;
 }
 .alignleft {
   display: inline;
@@ -38,12 +44,14 @@ body {
 a {
   text-decoration: none;
   border-bottom: 1px solid;
-  color: #eee;
+  color: #999999;
 }
 a:hover {
   text-decoration: none;
   border-bottom: 1px solid;
-  color: white;
+}
+.inverted a:hover {
+  color: black;
 }
 strong {
   text-transform: uppercase;
@@ -176,13 +184,14 @@ object {
   padding: 10px 0px;
   border: none;
   text-align: center;
+  font-size: 20px;
 }
 .omsc-toggle-title:hover,
 .omsc-toggle.omsc-expanded .omsc-toggle-title {
   background: none;
 }
 .omsc-toggle-title:hover {
-  color: #999;
+  color: #999999;
 }
 .omsc-toggle-title:after {
   display: none;
@@ -222,6 +231,15 @@ object {
 #main-menu .children {
   display: none;
 }
+#main-menu .sub-menu {
+  display: none;
+  position: absolute;
+  bottom: -24px;
+  right: 0px;
+}
+#main-menu .current-menu-item .sub-menu {
+  display: block;
+}
 body.inverted {
   background-color: white;
   color: black;
@@ -258,7 +276,7 @@ body.home #masthead ul li a {
 #main-menu ul li a.active,
 #main-menu ul li a:hover,
 #main-menu ul li.current_page_item a {
-  color: #999 !important;
+  color: #999999 !important;
   text-decoration: none;
 }
 #menu-button {
@@ -272,6 +290,7 @@ body.home #masthead ul li a {
   border-top: 15px double #000000;
   border-bottom: 5px solid #000000;
 }
+.home #menu-button,
 .inverted #menu-button {
   border-color: white;
 }
@@ -288,51 +307,56 @@ body.menu-visible #main-menu {
   -webkit-transform: translate(0px, 0%);
   transform: translate(0px, 0%);
 }
-article .content {
-  padding-top: 104px;
+#content {
+  margin-top: 154px;
   margin-left: 50px;
   margin-right: 50px;
 }
-article .content p,
-article .content h1,
-article .content h2,
-article .content h3,
-article .content h4,
-article .content ul {
+#content p,
+#content h1,
+#content h2,
+#content h3,
+#content h4,
+#content ul {
   max-width: 640px;
 }
+.home #content:after {
+  content: "";
+  display: block;
+  position: fixed;
+  top: 50px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  background-image: url(eclipse.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 .omsc-accordion {
-  margin-top: 0px;
+  margin-top: -50px;
   margin-left: -50px;
   margin-right: -50px;
 }
 .royalSlider {
   margin-top: -50px;
   margin-bottom: -50px;
+  width: calc(100% + 100px) !important;
+  margin-left: -50px;
+  margin-right: -50px;
 }
 .omsc-toggle-inner {
   padding: 50px;
 }
 .circle {
-  top: 200px;
-  left: 30%;
-  width: 40%;
+  top: 10%;
+  left: 20%;
+  width: 60%;
+  height: 60%;
   display: inline-block;
   position: absolute;
-}
-.circle:after {
-  padding-top: 100%;
-  display: block;
-  content: '';
-}
-.circle-inner {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background-color: white;
-  border-radius: 50%;
+  background-image: url(eclipse.png);
+  background-repeat: no-repeat;
 }
 .fadingBackground {
   position: fixed;
@@ -380,6 +404,12 @@ article .content ul {
     /* Chrome, Safari, Opera */
     transform: translate(0px, -100%);
   }
+  #main-menu .sub-menu {
+    display: none;
+    position: absolute;
+    bottom: 0px;
+    left: 20px;
+  }
   .inverted #main-menu {
     background-color: black;
   }
@@ -391,14 +421,15 @@ article .content ul {
     display: block;
   }
   body {
-    font-size: 14px;
+    font-size: 16px;
   }
-  article .content {
-    padding-top: 90px;
+  #content {
+    margin-top: 110px;
     margin-left: 20px;
     margin-right: 20px;
   }
   .omsc-accordion {
+    margin-top: -20px;
     margin-left: -20px;
     margin-right: -20px;
   }
@@ -408,4 +439,93 @@ article .content ul {
   .omsc-toggle-inner {
     padding: 20px;
   }
+}
+
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+.woocommerce form .form-row-last,
+.woocommerce .woocommerce-page form .form-row-last {
+  float: none;
+}
+.woocommerce .woocommerce-message {
+  background: none !important;
+  background-color: white !important;
+  box-shadow: none  !important;
+  border: 1px solid #999999 !important;
+}
+.woocommerce .woocommerce-info {
+  background: none !important;
+  background-color: white !important;
+  box-shadow: none  !important;
+  border: 1px solid #999999 !important;
+}
+.woocommerce .woocommerce-error,
+.woocommerce .woocommerce-info,
+.woocommerce .woocommerce-message,
+.woocommerce .woocommerce-page .woocommerce-error,
+.woocommerce .woocommerce-page .woocommerce-info,
+.woocommerce .woocommerce-page .woocommerce-message {
+  text-shadow: none;
+}
+.woocommerce .payment_box {
+  background: none !important;
+  background-color: white !important;
+  box-shadow: none  !important;
+  border: 1px solid #999999 !important;
+}
+.woocommerce .woocommerce-error:before,
+.woocommerce .woocommerce-info:before,
+.woocommerce .woocommerce-message:before,
+.woocommerce .woocommerce-page .woocommerce-error:before,
+.woocommerce .woocommerce-page .woocommerce-info:before,
+.woocommerce .woocommerce-page .woocommerce-message:before {
+  padding-top: 0px;
+}
+.woocommerce .wp-post-image {
+  border-radius: 50%;
+}
+.woocommerce .shop_table img {
+  width: 120px !important;
+}
+.woocommerce .shop_table a {
+  border: none;
+}
+.woocommerce #payment {
+  color: black;
+}
+.woocommerce .price {
+  color: white !important;
+}
+.woocommerce .quantity {
+  margin-top: 2px !important;
+  margin-right: 16px !important;
+}
+.woocommerce .button {
+  padding-top: 10px !important;
+  font-size: 16px !important;
+  background: none !important;
+  background-color: white !important;
+  box-shadow: none  !important;
+  border: 1px solid #999999 !important;
+  -webkit-border-radius: 8px !important;
+  -moz-border-radius: 8px !important;
+  border-radius: 8px !important;
+  background: white !important;
+  border: 1px solid #999999;
+  color: black !important;
+  text-shadow: none !important;
+}
+body.inverted .price {
+  color: black !important;
 }

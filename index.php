@@ -15,29 +15,6 @@
 get_header();
 
 
-// currently not used
-function showHome()
-{
-	$page = get_page_by_path("home");
-	$slug = $page->post_name;
-	$content = apply_filters('the_content', $page->post_content);
-	?>
-	<section id="page_<?php echo $slug ?>" class='page <?php echo "$slug" ?> depth-0'>
-
-		<div class="content">
-			<?php echo "$content" ?>
-		</div>
-		<div class="clear"></div>
-		<?php
-
-		if($page->ID >0)
-			showPagesWithParent($page->ID);
-		?>
-
-	</section>
-	<?php
-}
-
 function showOnePage($page, $index, $numberOfPages)
 {
 	$content = apply_filters('the_content', $page->post_content);
@@ -132,12 +109,13 @@ function showPagesWithParent($parentID, $excludeSlugs = array())
 	<main id="main" class="site-main" role="main">
 
 	<section class="page home depth-0">
-	<div class="circle"><div class = "circle-inner"></div></div>
+	<div class="circle"><div class="circle-inner">
+		
+	</div></div>
 	</section>
 
 		<?php
-		//showHome();
-		//showPagesWithParent(0, array("home"));
+		
 		showPagesWithParent(0);
 		?>
 		</div>

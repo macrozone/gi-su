@@ -31,7 +31,10 @@
 	background-color: black;
 }
 
-
+.rsLink, .rsLink:hover
+{
+	border: none;
+}
 /***************
 *
 *  1. Arrows
@@ -40,7 +43,8 @@
 
 .rsGisu .rsArrow {
 	height: 100%;
-	width: 44px;
+	width: 30%;
+	max-width: 200px;
 	position: absolute;
 	display: block;
 	cursor: pointer;
