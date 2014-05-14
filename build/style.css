@@ -4,6 +4,13 @@
     A set of useful LESS mixins
     More info at: http://lesselements.com
   ---------------------------------------------------*/
+
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
 @font-face {
   font-family: 'gisu';
   src: url('fonts/gisu.eot');
@@ -494,6 +501,12 @@ body.menu-visible #main-menu {
 }
 .woocommerce .wp-post-image {
   border-radius: 50%;
+}
+.woocommerce .shop_table {
+  border: 1px solid #999999 !important;
+}
+.woocommerce .shop_table td {
+  border-top: 1px solid #999999 !important;
 }
 .woocommerce .shop_table img {
   width: 120px !important;

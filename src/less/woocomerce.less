@@ -7,80 +7,84 @@
 		float: none;
 	}
 
-.woocommerce-message
-{
-	.box()
-}
-.woocommerce-info
-{
-	.box()
-}
-
-.woocommerce-error, .woocommerce-info, .woocommerce-message, .woocommerce-page .woocommerce-error, .woocommerce-page .woocommerce-info, .woocommerce-page .woocommerce-message
-{
-	text-shadow: none;
-}
-
-.payment_box
-{
-	.box()
-}
-
-.woocommerce-error:before, .woocommerce-info:before, .woocommerce-message:before, .woocommerce-page .woocommerce-error:before, .woocommerce-page .woocommerce-info:before, .woocommerce-page .woocommerce-message:before
-{
-	padding-top: 0px;
-}
-
-
-.wp-post-image
-{
-	border-radius: 50%;
-}
-
-.shop_table
-{
-	img
+	.woocommerce-message
 	{
-		width: 120px !important;
+		.box()
 	}
-	a{
-		border: none;
+	.woocommerce-info
+	{
+		.box()
 	}
-}
 
-#payment
-{
-	color: black;
-}
+	.woocommerce-error, .woocommerce-info, .woocommerce-message, .woocommerce-page .woocommerce-error, .woocommerce-page .woocommerce-info, .woocommerce-page .woocommerce-message
+	{
+		text-shadow: none;
+	}
 
-.price
-{
-	color: white !important;
-	
-}
+	.payment_box
+	{
+		.box()
+	}
+
+	.woocommerce-error:before, .woocommerce-info:before, .woocommerce-message:before, .woocommerce-page .woocommerce-error:before, .woocommerce-page .woocommerce-info:before, .woocommerce-page .woocommerce-message:before
+	{
+		padding-top: 0px;
+	}
+
+
+	.wp-post-image
+	{
+		border-radius: 50%;
+	}
+
+	.shop_table
+	{
+		border: @border !important;
+		td{
+			border-top: @border !important;
+		}
+		img
+		{
+			width: 120px !important;
+		}
+		a{
+			border: none;
+		}
+	}
+
+	#payment
+	{
+		color: black;
+	}
+
+	.price
+	{
+		color: white !important;
+
+	}
 
 
 
-.quantity{
-	margin-top:2px !important;
-	margin-right: 16px !important;
-}
+	.quantity{
+		margin-top:2px !important;
+		margin-right: 16px !important;
+	}
 
-.button
-{
-	padding-top:10px !important;
-	font-size: 16px !important;
-	.box();
-	.rounded(8px) !important;
+	.button
+	{
+		padding-top:10px !important;
+		font-size: 16px !important;
+		.box();
+		.rounded(8px) !important;
 
-background: white !important;
-border: @border;
-color: black !important;
-text-shadow: none !important;
-}
+		background: white !important;
+		border: @border;
+		color: black !important;
+		text-shadow: none !important;
+	}
 }
 
 body.inverted .price
-	{
-		color: black !important;
-	}
+{
+	color: black !important;
+}
