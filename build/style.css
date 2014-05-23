@@ -450,6 +450,10 @@ body.menu-visible #main-menu {
   }
   .royalSlider {
     margin-top: -20px;
+    margin-bottom: -20px;
+    width: calc(100% + 40px) !important;
+    margin-left: -20px;
+    margin-right: -20px;
   }
   .omsc-toggle-inner {
     padding: 20px;
