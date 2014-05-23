@@ -55,6 +55,7 @@ a {
 a:hover {
 	text-decoration: none;
 	border-bottom: 1px solid;
+	.textBlur()
 	
 }
 strong {
@@ -198,8 +199,7 @@ embed,iframe,object {
 	background: none;
 }
 .omsc-toggle-title:hover {
-	color: @blurColor;
-	.text-shadow(0px 1px 10px @blurColor);
+	.textBlur()
 }
 .omsc-toggle-title:before {
 	.transition();
@@ -209,7 +209,7 @@ embed,iframe,object {
 	margin: 0 auto;
 	height: 1px;
 	border-bottom: 1px solid @blurColor;
-	.box-shadow(0px 0px 20px 4px @blurColor);
+	.blur();
 	
 	top: 0px;
 	width: 300px;
@@ -218,14 +218,14 @@ embed,iframe,object {
 	.omsc-expanded &
 	{
 		width: 90%;
-	
+
 	}
 	
 }
 
 .omsc-toggle-title:after {
 	display: none;
-	}
+}
 
 #main-menu {
 	padding-left: 0px;
@@ -277,6 +277,7 @@ embed,iframe,object {
 body.home {
 	background-color: black;
 	color: white;
+	font-size:24px;
 	#masthead
 	{
 		background-color: transparent;
@@ -285,10 +286,58 @@ body.home {
 			color: white;
 		}
 	}
+	.page
+	{
+		@topOffset: 50px;
+		
+		position: fixed;
+		top: @topOffset;
+		right: 50px;
+		left: 50px;
+		bottom: 0px;
+		margin: 0px;
+
+		#content
+	{
+		margin: auto;
+		display: table;
+		width: 100%;
+		height: 100%;
+		max-width: @maxContentWidth;
+		#content-wrapper
+		{
+
+			display: table-cell;
+			
+
+			text-align: center;
+
+			vertical-align: middle;
+
+
+			&:after{
+				content: "";
+				z-index:-10;
+
+				display: block;
+				position: fixed;
+				top: @topOffset;
+				left: 0px;
+				bottom: 0px;
+				right: 0px;
+				background-image: url(eclipse.png);
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+		}
+	}
+	}
+	
 }
+
 #main-menu ul li a.active, #main-menu ul li a:hover, #main-menu ul li.current_page_item a {
-	color: @blurColor;
-	.text-shadow(0px 1px 10px @blurColor);
+	.textBlur();
 	text-decoration: none;
 }
 
@@ -340,28 +389,12 @@ body.menu-visible {
 
 	p, h1, h2, h3, h4, ul
 	{
-		max-width: 640px;
+		max-width: @maxContentWidth;
 	}
 }
 
 
-.home #content:after
-{
-	content: "";
 
-	
-	display: block;
-	position: fixed;
-	top: 50px;
-	left: 0px;
-	bottom: 0px;
-	right: 0px;
-	background-image: url(eclipse.png);
-	background-size: contain;
-	background-position: center;
-	background-repeat: no-repeat;
-
-}
 
 .omsc-accordion {
 	

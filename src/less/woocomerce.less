@@ -9,11 +9,15 @@
 
 	.woocommerce-message
 	{
-		.box()
+		.box();
+		.blur() !important;
+		
 	}
 	.woocommerce-info
 	{
-		.box()
+		.box();
+		.blur() !important;
+	
 	}
 
 	.woocommerce-error, .woocommerce-info, .woocommerce-message, .woocommerce-page .woocommerce-error, .woocommerce-page .woocommerce-info, .woocommerce-page .woocommerce-message
@@ -23,7 +27,8 @@
 
 	.payment_box
 	{
-		.box()
+		.box();
+		
 	}
 
 	.woocommerce-error:before, .woocommerce-info:before, .woocommerce-message:before, .woocommerce-page .woocommerce-error:before, .woocommerce-page .woocommerce-info:before, .woocommerce-page .woocommerce-message:before
@@ -39,6 +44,7 @@
 
 	.shop_table
 	{
+
 		border: @border !important;
 		td{
 			border-top: @border !important;
@@ -55,7 +61,8 @@
 	#payment
 	{
 		color: black;
-	}
+		
+	}	
 
 	.price
 	{
@@ -75,12 +82,17 @@
 		padding-top:10px !important;
 		font-size: 16px !important;
 		.box();
+	
 		.rounded(8px) !important;
 
 		background: white !important;
 		border: @border;
 		color: black !important;
 		text-shadow: none !important;
+		&:hover 
+		{
+			.blur() !important;
+		}
 	}
 }
 
