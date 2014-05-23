@@ -17,14 +17,12 @@ onError = (error) ->
 	console.log error
 
 
-gulp.task "less", ->
-	gulp.src lessGlob
-	.pipe watch()
-	.pipe gulpif /[.]less$/, less().on "error", onError
-	.pipe concat "style.css"
+gulp.task "styles", ->
+	gulp.src "less/style.less"
+	.pipe less().on "error", onError
 	.pipe gulp.dest build
-	.pipe livereload()
 	.on "error", onError
+
 
 gulp.task "scripts", ->
 	gulp.src './scripts/**'
@@ -39,4 +37,10 @@ gulp.task "scripts", ->
 
 gulp.task 'default', ->
 	gulp.run 'scripts'
-	gulp.run 'less'
+	gulp.run 'styles'
+	server = livereload()
+	gulp.watch "less/**/*.less", ->
+		gulp.run "styles"
+
+	gulp.watch(build+"/*.*").on "change", (file) ->
+		server.changed file.path
