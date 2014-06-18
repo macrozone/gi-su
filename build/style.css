@@ -490,6 +490,14 @@ body.menu-visible #main-menu {
 #content ul {
   max-width: 640px;
 }
+#content p.full-width,
+#content h1.full-width,
+#content h2.full-width,
+#content h3.full-width,
+#content h4.full-width,
+#content ul.full-width {
+  max-width: 100%;
+}
 .omsc-accordion {
   margin-left: -50px;
   margin-right: -50px;
