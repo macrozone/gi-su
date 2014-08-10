@@ -133,8 +133,90 @@
   -moz-box-shadow: 0px 0px 15px 1.8px #dddddd !important;
   box-shadow: 0px 0px 15px 1.8px #dddddd !important;
 }
+.woocommerce ul.products li {
+  margin-bottom: 24px;
+}
+.woocommerce ul.products li .details {
+  display: none;
+}
 body.inverted .price {
   color: black !important;
+}
+#products-overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+#products-overlay .btn-close {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+#products-overlay ul {
+  margin: 0px;
+  padding: 0px;
+}
+#products-overlay .content-wrapper {
+  margin-top: 100px;
+  max-height: 520px;
+}
+#products-overlay .content-wrapper .products {
+  max-height: 100%;
+  position: relative;
+}
+#products-overlay .content-wrapper .btn-toggle-details {
+  z-index: 100;
+  position: absolute;
+  color: white;
+  bottom: -60px;
+  right: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 18px;
+}
+#products-overlay .product-details {
+  position: absolute;
+  bottom: 0px;
+  background-color: white;
+  color: black;
+  width: 100%;
+  display: none;
+  padding: 16px;
+}
+#products-overlay .product-details.active {
+  display: block;
+}
+#products-overlay .product-details .details {
+  display: none;
+}
+#products-overlay .product-details .details.active {
+  display: block;
+}
+#products-overlay .product-details .content {
+  float: left;
+}
+#products-overlay .product-details .price_cart {
+  float: right;
+}
+#products-overlay .product-details .price_cart .stock {
+  display: none;
+}
+#products-overlay .product-details .price_cart .price {
+  float: right;
+  font-size: 18px;
+}
+#products-overlay .product-details .price_cart .single_add_to_cart_button {
+  border: none;
+  background: none;
+  text-transform: uppercase;
+  font-size: 18px;
+  padding: 0px;
 }
 @font-face {
   font-family: 'gisu';
@@ -193,8 +275,13 @@ img {
   max-width: 100%;
 }
 img[class*="wp-image-"] {
-  margin-top: 10px;
   margin-bottom: 10px;
+  width: 280px;
+}
+@media screen and (max-width: 640px) {
+  img[class*="wp-image-"] {
+    width: 100%;
+  }
 }
 .wp-caption {
   margin-bottom: 10px;
@@ -421,7 +508,6 @@ body.home .page #content {
   display: table;
   width: 100%;
   height: 100%;
-  max-width: 640px;
 }
 body.home .page #content #content-wrapper {
   display: table-cell;
@@ -458,8 +544,8 @@ body.home .page #content #content-wrapper:after {
   cursor: pointer;
   width: 25px;
   height: 25px;
-  border-top: 15px double #000000;
-  border-bottom: 5px solid #000000;
+  border-top: 15px double #ffffff;
+  border-bottom: 5px solid #ffffff;
 }
 .home #menu-button {
   border-color: white;
@@ -479,24 +565,13 @@ body.menu-visible #main-menu {
 }
 #content {
   margin-top: 129px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1024px;
+}
+#content #content-wrapper {
   margin-left: 50px;
   margin-right: 50px;
-}
-#content p,
-#content h1,
-#content h2,
-#content h3,
-#content h4,
-#content ul {
-  max-width: 640px;
-}
-#content p.full-width,
-#content h1.full-width,
-#content h2.full-width,
-#content h3.full-width,
-#content h4.full-width,
-#content ul.full-width {
-  max-width: 100%;
 }
 .omsc-accordion {
   margin-left: -50px;
@@ -581,6 +656,8 @@ body.menu-visible #main-menu {
   }
   #content {
     margin-top: 100px;
+  }
+  #content #content-wrapper {
     margin-left: 20px;
     margin-right: 20px;
   }

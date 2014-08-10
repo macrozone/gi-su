@@ -151,3 +151,36 @@ function new_royalslider_add_custom_skin($skins) {
            );
 	return $skins;
 }
+
+
+function omsc_sc_toggle_with_image( $atts, $content = null ) {
+	
+	if(has_filter('omsc_sc_toggle'))
+		return apply_filters('omsc_sc_toggle', $atts, $content);
+	
+	extract(shortcode_atts(array(
+		'title'    	 => '&nbsp;',
+		'state'		 => '',
+		'src' => null
+
+	), $atts));
+
+	if(!empty($src))
+	{
+		$image = '<img src="'.$src.'" />';
+	}
+	if($state == 'opened' || $state == 'expanded'  || $state == 'expand')
+		$state='open';
+
+	return
+		'<div class="omsc-toggle'.($state=='open'?' omsc-expanded':'').'">'.
+			'<div class="omsc-toggle-title">'.$image.'<h3>'.$title.'</h3></div>'.
+			'<div class="omsc-toggle-inner"'.($state=='open'?' style="display:block"':'').'>'.
+				do_shortcode($content).
+			'</div>'.
+		'</div>'
+	;
+	
+}
+add_shortcode('toggle', 'omsc_sc_toggle_with_image');
+

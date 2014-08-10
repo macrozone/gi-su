@@ -25,6 +25,8 @@ if ( empty( $woocommerce_loop['columns'] ) )
 if ( ! $product || ! $product->is_visible() )
 	return;
 
+
+
 // Increase loop count
 $woocommerce_loop['loop']++;
 
@@ -35,7 +37,7 @@ if ( 0 == ( $woocommerce_loop['loop'] - 1 ) % $woocommerce_loop['columns'] || 1 
 if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 	$classes[] = 'last';
 ?>
-<li <?php post_class( $classes ); ?>>
+<li class="col-xs-6 col-sm-4 col-md-2">
 
 	<?php do_action( 'woocommerce_before_shop_loop_item' ); ?>
 
@@ -51,20 +53,21 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 			do_action( 'woocommerce_before_shop_loop_item_title' );
 		?>
 
-		<h3>adsf<?php the_title(); ?></h3>
-
+	<div class="details">
+	
+	<div class="content"><?php the_content();?></div>
+	<div class="price_cart">
 		<?php
-			/**
-			 * woocommerce_after_shop_loop_item_title hook
-			 *
-			 * @hooked woocommerce_template_loop_rating - 5
-			 * @hooked woocommerce_template_loop_price - 10
-			 */
-			do_action( 'woocommerce_after_shop_loop_item_title' );
-		?>
 
+			
+			woocommerce_template_single_price();
+			woocommerce_template_single_add_to_cart();
+		?>
+		</div>
+		</div>
 	</a>
 
-	<?php do_action( 'woocommerce_after_shop_loop_item' ); ?>
+
+	<?php //do_action( 'woocommerce_after_shop_loop_item' ); ?>
 
 </li>
