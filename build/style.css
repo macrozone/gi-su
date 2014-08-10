@@ -164,6 +164,7 @@ body.inverted .price {
 }
 #products-overlay .content-wrapper {
   margin-top: 100px;
+  height: 100%;
   max-height: 520px;
 }
 #products-overlay .content-wrapper .products {
