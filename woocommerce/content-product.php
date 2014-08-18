@@ -37,7 +37,7 @@ if ( 0 == ( $woocommerce_loop['loop'] - 1 ) % $woocommerce_loop['columns'] || 1 
 if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 	$classes[] = 'last';
 ?>
-<li class="col-xs-6 col-sm-4 col-md-2">
+<li>
 
 	<?php do_action( 'woocommerce_before_shop_loop_item' ); ?>
 

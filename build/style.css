@@ -4,6 +4,13 @@
     A set of useful LESS mixins
     More info at: http://lesselements.com
   ---------------------------------------------------*/
+.inner-halo {
+  box-shadow: inset 0px 0px 20px #999;
+}
+.inner-halo img {
+  position: relative;
+  z-index: -1;
+}
 /*  
  * 
  * Here are a few needed CSS additions to integrate bootstrap truly into WordPress, 
@@ -88,9 +95,6 @@
 .woocommerce .woocommerce-page .woocommerce-message:before {
   padding-top: 0px;
 }
-.woocommerce .wp-post-image {
-  border-radius: 50%;
-}
 .woocommerce .shop_table {
   border: 1px solid #999999 !important;
 }
@@ -133,11 +137,43 @@
   -moz-box-shadow: 0px 0px 15px 1.8px #dddddd !important;
   box-shadow: 0px 0px 15px 1.8px #dddddd !important;
 }
+.woocommerce ul.products {
+  float: left;
+  clear: none;
+  width: 33.33333%;
+  margin-top: 40px;
+  position: relative;
+  box-sizing: border-box;
+}
 .woocommerce ul.products li {
+  padding: 0px 10px;
+  -webkit-transition: all 5s ease-out;
+  -moz-transition: all 5s ease-out;
+  -o-transition: all 5s ease-out;
+  transition: all 5s ease-out;
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
   margin-bottom: 24px;
 }
 .woocommerce ul.products li .details {
   display: none;
+}
+.woocommerce ul.products li a {
+  display: block;
+  border-radius: 50%;
+  box-shadow: inset 0px 0px 20px #999;
+}
+.woocommerce ul.products li a img {
+  position: relative;
+  z-index: -1;
+}
+.woocommerce ul.products li a img {
+  border-radius: 50%;
+}
+.woocommerce ul.products li.visible {
+  opacity: 1;
+  pointer-events: all;
 }
 body.inverted .price {
   color: black !important;
@@ -158,14 +194,36 @@ body.inverted .price {
   cursor: pointer;
   text-transform: uppercase;
 }
+#products-overlay .rsSlide,
+#products-overlay .rsVisibleNearbyWrap {
+  overflow: visible;
+}
 #products-overlay ul {
   margin: 0px;
   padding: 0px;
 }
+#products-overlay ul li {
+  list-style-type: none;
+}
+#products-overlay ul li a img {
+  border-radius: 50%;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  box-shadow: inset 0px 0px 20px #999;
+}
+#products-overlay ul li a img img {
+  position: relative;
+  z-index: -1;
+}
+#products-overlay ul li:hover img {
+  /*	transform: scale(1.5);*/
+}
 #products-overlay .content-wrapper {
   margin-top: 140px;
   height: 100%;
-  max-height: 628px;
+  max-height: 528px;
 }
 #products-overlay .content-wrapper .products {
   max-height: 100%;
@@ -278,6 +336,9 @@ img {
 img[class*="wp-image-"] {
   margin-bottom: 10px;
   width: 280px;
+}
+img[class*="wp-image-"].size-full {
+  width: 100%;
 }
 @media screen and (max-width: 640px) {
   img[class*="wp-image-"] {

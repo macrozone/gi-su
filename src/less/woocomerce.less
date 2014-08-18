@@ -37,10 +37,7 @@
 	}
 
 
-	.wp-post-image
-	{
-		border-radius: 50%;
-	}
+	
 
 	.shop_table
 	{
@@ -97,14 +94,57 @@
 
 	ul.products
 	{
+		float: left;
+		clear: none;
+		width: 33.33333%;
+		margin-top:40px;
+		position: relative;
+		
+		box-sizing: border-box;
+
+
+
 
 		li
 		{
+			
+			padding:0px 10px;
+			.transition(5s);
+			opacity: 0;
+			position: absolute;
+			pointer-events:none;
 			.details
 			{
 				display: none;
 			}	
 			margin-bottom: 24px;
+
+			a
+			{
+				display: block;
+				border-radius: 50%;
+				.inner-halo;
+				img
+				{
+				
+					border-radius: 50%;
+				}
+			}
+
+
+
+
+
+		}
+
+
+		li.visible
+		{
+			
+			opacity: 1;
+			pointer-events:all;
+
+			
 		}
 	}
 }

@@ -96,7 +96,7 @@ jQuery(document).ready(function(){
     	toggle / gallery fix *
     	deprecated?
      */
-    $(".omsc-toggle-title").on("click", function(event) {
+    return $(".omsc-toggle-title").on("click", function(event) {
       var $parent, $this, slider;
       $this = $(this);
       $parent = $this.parent();
@@ -107,14 +107,34 @@ jQuery(document).ready(function(){
         });
       }
     });
+  });
+
+}).call(this);
+
+(function() {
+  jQuery(function($) {
+    $(".products").each(function(index, item) {
+      var fade, visibleIndex;
+      visibleIndex = 0;
+      fade = function() {
+        var $lis;
+        $lis = $(item).find("li");
+        $lis.removeClass("visible");
+        $lis.eq(visibleIndex).addClass("visible");
+        return visibleIndex = (visibleIndex + 1) % $lis.length;
+      };
+      return setTimeout(function() {
+        return fade();
+      }, index * 500);
+    });
     return $(".products").on("click", "li", function(event) {
-      var $content, $details, $oldDetails, $overlay, $products, $slider, closeOverlay, setDetails, slider, startSlideId;
+      var $content, $details, $oldDetails, $overlay, $products, $slider, closeOverlay, maxWidth, setDetails, slider, startSlideId;
+      maxWidth = $(window).height() / 3 * 2;
       startSlideId = $(this).index();
       $products = $(event.delegateTarget).clone();
-      $products.find("li").removeClass().find("img").addClass("rsImg");
+      $products.find("li").removeClass().find("a").find("img").addClass("rsImg");
       $("#products-overlay").remove();
       $oldDetails = $products.find(".details");
-      console.log($oldDetails);
       $overlay = $('<div id="products-overlay"></div>');
       $content = $('<div class="content-wrapper"></div>');
       $products.appendTo($content);
@@ -125,7 +145,7 @@ jQuery(document).ready(function(){
       $slider.royalSlider({
         startSlideId: startSlideId,
         autoHeight: true,
-        imageScaleMode: "fit",
+        autoScaleSliderHeight: 400,
         autoScaleSlider: true,
         keyboardNavEnabled: true,
         visibleNearby: {

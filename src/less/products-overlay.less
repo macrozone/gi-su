@@ -15,17 +15,45 @@
 		cursor: pointer;
 		text-transform: uppercase;
 	}
+
+	.rsSlide, .rsVisibleNearbyWrap
+	{
+		overflow: visible;
+	}
 	ul
 	{
 		margin: 0px;
 		padding: 0px;
+		li
+		{
+
+			a
+			{
+				
+				
+				img
+				{
+					border-radius:50%;
+					.transition();
+					.inner-halo();
+				}
+		
+			}
+			list-style-type: none;
+		}
+		
+		li:hover img
+		{
+		/*	transform: scale(1.5);*/
+
+		}
 	}
 
 	.content-wrapper
 	{
 		margin-top: 140px;
 		height: 100%;
-		max-height: 628px;
+		max-height: 528px;
 		.products
 		{
 			max-height: 100%;
