@@ -1,5 +1,5 @@
 @import "elements.less";
-@blurColor: #ddd;
+@blurColor: #fff;
 @colorGrey: #999;
 @maxContentWidth: 1024px;
 @paddingMobile: 20px;
@@ -24,10 +24,10 @@
 	.box-shadow(0px 0px 15px 1.8px @blurColor);
 }
 
-.textBlur()
+.textBlur(@color: @blurColor)
 {
 	
-	.text-shadow(0px 0px 30px @blurColor);
+	.text-shadow(0px 0px 10px @color);
 }
 
 

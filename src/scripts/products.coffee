@@ -29,8 +29,14 @@ jQuery ($) ->
 		
 		$overlay = $ '<div id="products-overlay"></div>';
 		$content = $ '<div class="content-wrapper"></div>';
+		$controlWrapper = $ '<div class="controls-wrapper"></div>'
+		$controls = $ '<div class="controls"></div>'
+		
+	
+	
 		$products.appendTo $content;
 		$content.appendTo $overlay
+		
 		$overlay.prependTo $("body")
 		$slider = $overlay.find("ul")
 		$slider.addClass "rsGisu"
@@ -53,9 +59,11 @@ jQuery ($) ->
 		$details = $ '<div class="product-details"></div>'
 		$details.appendTo $content
 		$details.append $oldDetails
-		$content.append $ '<a class="btn-close">Close</a>'
-		$slider.append $ '<a class="btn-toggle-details">Buy</a>'
 
+		$controls.append $ '<a class="btn-close">Close</a>'
+		$controls.append $ '<a class="btn-toggle-details">Buy</a>'
+		$controls.appendTo $controlWrapper
+		$controlWrapper.appendTo $slider
 		closeOverlay = ->
 			slider.destroy()
 			$overlay.remove()

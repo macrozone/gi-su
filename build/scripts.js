@@ -128,7 +128,7 @@ jQuery(document).ready(function(){
       }, index * 500);
     });
     return $(".products").on("click", "li", function(event) {
-      var $content, $details, $oldDetails, $overlay, $products, $slider, closeOverlay, maxWidth, setDetails, slider, startSlideId;
+      var $content, $controlWrapper, $controls, $details, $oldDetails, $overlay, $products, $slider, closeOverlay, maxWidth, setDetails, slider, startSlideId;
       maxWidth = $(window).height() / 3 * 2;
       startSlideId = $(this).index();
       $products = $(event.delegateTarget).clone();
@@ -137,6 +137,8 @@ jQuery(document).ready(function(){
       $oldDetails = $products.find(".details");
       $overlay = $('<div id="products-overlay"></div>');
       $content = $('<div class="content-wrapper"></div>');
+      $controlWrapper = $('<div class="controls-wrapper"></div>');
+      $controls = $('<div class="controls"></div>');
       $products.appendTo($content);
       $content.appendTo($overlay);
       $overlay.prependTo($("body"));
@@ -161,8 +163,10 @@ jQuery(document).ready(function(){
       $details = $('<div class="product-details"></div>');
       $details.appendTo($content);
       $details.append($oldDetails);
-      $content.append($('<a class="btn-close">Close</a>'));
-      $slider.append($('<a class="btn-toggle-details">Buy</a>'));
+      $controls.append($('<a class="btn-close">Close</a>'));
+      $controls.append($('<a class="btn-toggle-details">Buy</a>'));
+      $controls.appendTo($controlWrapper);
+      $controlWrapper.appendTo($slider);
       closeOverlay = function() {
         slider.destroy();
         return $overlay.remove();

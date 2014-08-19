@@ -58,7 +58,7 @@ a:hover {
 	text-decoration: none;
 
 	.textBlur();
-		color: white !important;
+	color: black !important;
 
 	
 }
@@ -78,9 +78,9 @@ img[class*="wp-image-"] {
 	{
 		width:100%;
 	}
-@media screen and (max-width: @mobileWidth) {
-	width: 100%;
-}
+	@media screen and (max-width: @mobileWidth) {
+		width: 100%;
+	}
 }
 .wp-caption {
 	border: 1px solid #ccc;
@@ -169,11 +169,11 @@ embed,iframe,object {
 	background-color: transparent;
 	color: white;
 	pointer-events: none;
-	position: fixed;
+	position: relative;
 	z-index: 200;
 	top: 0px;
-	left: 0px;
-	right: 0px;
+	max-width: @maxContentWidth;
+	margin: 0 auto;
 	padding: 30px @paddingNormal;
 	height: @headerHeightNormal;
 	* {
@@ -258,11 +258,15 @@ embed,iframe,object {
 	padding-right: 0px;
 	z-index: 100;
 	position: absolute;
-	right: 0px;
+	right: @paddingNormal;
+	@media screen and (max-width: @mobileWidth) {
+			right: @paddingMobile;
+		}
 	top: 18px;
 	margin-left: 280px;
 	
 	ul {
+		margin-right: -16px;
 		padding: 0px;
 		li {
 			line-height: 22px;
@@ -304,7 +308,7 @@ body.home {
 	color: white;
 	a
 	{
-				color: black;
+		color: black;
 		.textBlur();
 
 	}
@@ -334,7 +338,7 @@ body.home {
 			display: table;
 			width: 100%;
 			height: 100%;
-		
+
 			#content-wrapper
 			{
 
@@ -412,14 +416,14 @@ body.menu-visible {
 }
 
 #content {
-	margin-top: @headerHeightNormal + @paddingNormal/2;
+	
 	margin-left: auto;
 	margin-right: auto;
 	max-width: @maxContentWidth;
 	#content-wrapper
 	{
-	margin-left: @paddingNormal;
-	margin-right: @paddingNormal;
+		margin-left: @paddingNormal;
+		margin-right: @paddingNormal;
 	}
 }
 
@@ -497,12 +501,20 @@ body.menu-visible {
 		padding-bottom: 20px;
 		left: 0px;
 		top: 0px;
-
+		
 		right: 0px;
 		-ms-transform: translate(0px,-100%); /* IE 9 */
 		-webkit-transform: translate(0px,-100%); /* Chrome, Safari, Opera */
 		transform: translate(0px,-100%);
 
+		.menu-mainmenu-container
+		{
+			overflow: hidden;
+			margin-top: 8px;
+			
+			padding-bottom: 8px;
+			.gradient(@start: rgba(0,0,0,0), @stop:rgba(0,0,0,1));
+		}
 		.sub-menu
 		{
 			display: none;
@@ -526,11 +538,11 @@ body.menu-visible {
 	}
 	#content
 	{
-		margin-top: @headerHeightMobile + @paddingMobile/2;
+		
 		#content-wrapper
 		{
-				margin-left: @paddingMobile;
-		margin-right: @paddingMobile;
+			margin-left: @paddingMobile;
+			margin-right: @paddingMobile;
 		}
 		
 	}

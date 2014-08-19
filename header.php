@@ -26,7 +26,7 @@
 	
 	<header id="masthead" class="site-header" role="banner">
 
-	<div class="logo" ></div>
+	<a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>"></a>
 		
 
 
