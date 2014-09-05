@@ -4,12 +4,8 @@
     A set of useful LESS mixins
     More info at: http://lesselements.com
   ---------------------------------------------------*/
-.inner-halo {
-  box-shadow: inset 0px 0px 20px #999;
-}
-.inner-halo img {
-  position: relative;
-  z-index: -1;
+.halo {
+  box-shadow: 0px 0px 20px #999;
 }
 /*  
  * 
@@ -168,13 +164,9 @@
 .woocommerce ul.products li a {
   display: block;
   border-radius: 50%;
-  box-shadow: inset 0px 0px 20px #999;
 }
 .woocommerce ul.products li a img {
-  position: relative;
-  z-index: -1;
-}
-.woocommerce ul.products li a img {
+  box-shadow: 0px 0px 20px #999;
   border-radius: 50%;
 }
 .woocommerce ul.products li.visible {
@@ -259,11 +251,7 @@ body.inverted .price {
   -moz-transition: all 0.2s ease-out;
   -o-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
-  box-shadow: inset 0px 0px 20px #999;
-}
-#products-overlay ul li a img img {
-  position: relative;
-  z-index: -1;
+  box-shadow: 0px 0px 20px #999;
 }
 #products-overlay ul li:hover img {
   /*	transform: scale(1.5);*/
@@ -476,7 +464,6 @@ object {
   position: relative;
   z-index: 200;
   top: 0px;
-  max-width: 1024px;
   margin: 0 auto;
   padding: 30px 50px;
   height: 104px;
