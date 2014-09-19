@@ -9,15 +9,18 @@ $templates = array(
 	"white", "black");
 
 $fullWidth = get_post_meta(get_the_ID(), "full-width");
+
 if(count($fullWidth) > 0)
 	$fullWidth = $fullWidth[0];
 else
 	$fullWidth = false;
+
+
 ?>
 
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-<div id="content <?php echo $fullWidth? "full-width":""?>">
+<div id="content" class="<?php echo $fullWidth? "full-width":""?>">
 <div id="content-wrapper">
 
 	
