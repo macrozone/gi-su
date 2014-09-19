@@ -65,11 +65,12 @@
 	{
 		padding: 8px !important;
 		margin-right: -8px;
+		color: white;
 	}
 	.single_add_to_cart_button:hover
 	{
-		.textBlur(black);
-		color: white;
+		.textBlur(white);
+		color: black;
 
 	}
 	ul
@@ -127,18 +128,18 @@
 	{
 		position: absolute;
 		bottom: 0px;
-		background-color: white;
-		color: black;
+		background-color: black;
+		color: white;
 		width: 100%;
 		display: none;
-		
+		.halo;
 		&.active
 		{
 			display: block;
 		}
 		.details
 		{
-			max-width: @maxContentWidth;
+			
 			margin: 0 auto;
 			display: none;
 			padding: 16px @paddingNormal;
@@ -149,6 +150,11 @@
 			&.active
 			{
 				display: block;
+			}
+
+			p
+			{
+				margin-bottom: 4px;
 			}
 		}
 
