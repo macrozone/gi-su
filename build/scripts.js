@@ -163,14 +163,21 @@ jQuery(document).ready(function(){
       $details = $('<div class="product-details"></div>');
       $details.appendTo($content);
       $details.append($oldDetails);
-      $controls.append($('<a class="btn-close">Close</a>'));
+      $controls.append($('<a class="btn-close">Back</a>'));
       $controls.append($('<a class="btn-toggle-details">Buy</a>'));
       $controls.appendTo($controlWrapper);
-      $controlWrapper.appendTo($slider);
+      $controlWrapper.appendTo($content);
       closeOverlay = function() {
         slider.destroy();
         return $overlay.remove();
       };
+      $overlay.on("click", function(event) {
+        var $target;
+        $target = $(event.target);
+        if ($target.is($overlay) || $target.is($content)) {
+          return closeOverlay();
+        }
+      });
       $overlay.on("click", ".btn-close", closeOverlay);
       $overlay.on("click", function(event) {
         if ((event.target === $overlay.get(0)) || (event.target === $content.get(0))) {
@@ -178,17 +185,20 @@ jQuery(document).ready(function(){
         }
       });
       $overlay.on("click", ".rsSlide, .btn-toggle-details", function(event) {
-        var bottomOffset, detailsHeight, height;
+        var bottomOffset, controlBottomOffset, detailsHeight, height;
         $details.toggleClass("active");
         if ($details.hasClass("active")) {
           detailsHeight = $details.outerHeight();
           bottomOffset = $(window).height() - $slider.height() - 100 - 100;
           height = -Math.min(bottomOffset - detailsHeight, 0);
+          controlBottomOffset = detailsHeight;
           $(".btn-toggle-details").text("close");
         } else {
           $(".btn-toggle-details").text("buy");
           height = 0;
+          controlBottomOffset = 0;
         }
+        $controlWrapper.css("bottom", controlBottomOffset);
         $slider.css("top", -height);
         return false;
       });

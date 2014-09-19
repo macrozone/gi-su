@@ -5,7 +5,7 @@
     More info at: http://lesselements.com
   ---------------------------------------------------*/
 .halo {
-  box-shadow: 0px 0px 20px #999;
+  box-shadow: 0px 0px 60px #666;
 }
 /*  
  * 
@@ -182,17 +182,17 @@ body.inverted .price {
   background-color: rgba(0, 0, 0, 0.8);
 }
 #products-overlay .controls-wrapper {
-  z-index: -10;
+  z-index: 100;
   position: absolute;
-  top: 0px;
-  left: 0px;
   bottom: 0px;
-  right: 0px;
+  height: 30px;
+  width: 100%;
 }
 #products-overlay .controls-wrapper .controls {
+  width: 100%;
   margin: 0 auto;
   position: relative;
-  height: 100%;
+  bottom: 30px;
 }
 #products-overlay .controls-wrapper .controls .btn-close {
   left: 50px;
@@ -215,10 +215,9 @@ body.inverted .price {
   z-index: 100;
   position: absolute;
   color: white;
-  bottom: -80px;
   text-transform: uppercase;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 24px;
 }
 #products-overlay .rsSlide,
 #products-overlay .rsVisibleNearbyWrap {
@@ -247,7 +246,7 @@ body.inverted .price {
   -moz-transition: all 0.2s ease-out;
   -o-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
-  box-shadow: 0px 0px 20px #999;
+  box-shadow: 0px 0px 60px #666;
 }
 #products-overlay ul li:hover img {
   /*	transform: scale(1.5);*/

@@ -31,7 +31,7 @@ jQuery ($) ->
 		$content = $ '<div class="content-wrapper"></div>';
 		$controlWrapper = $ '<div class="controls-wrapper"></div>'
 		$controls = $ '<div class="controls"></div>'
-		
+
 	
 	
 		$products.appendTo $content;
@@ -60,13 +60,19 @@ jQuery ($) ->
 		$details.appendTo $content
 		$details.append $oldDetails
 
-		$controls.append $ '<a class="btn-close">Close</a>'
+		$controls.append $ '<a class="btn-close">Back</a>'
 		$controls.append $ '<a class="btn-toggle-details">Buy</a>'
 		$controls.appendTo $controlWrapper
-		$controlWrapper.appendTo $slider
+		$controlWrapper.appendTo $content
+
 		closeOverlay = ->
 			slider.destroy()
 			$overlay.remove()
+
+		$overlay.on "click", (event) ->
+			$target = $(event.target)
+			if($target.is($overlay) or $target.is($content))
+				closeOverlay()
 
 		$overlay.on "click", ".btn-close", closeOverlay
 		$overlay.on "click", (event)->
@@ -82,12 +88,14 @@ jQuery ($) ->
 				detailsHeight = $details.outerHeight()
 				bottomOffset = $(window).height() - $slider.height() - 100 -100
 				height = -Math.min(bottomOffset - detailsHeight,0)
+				controlBottomOffset = detailsHeight
 				$(".btn-toggle-details").text("close")
 			else
 				$(".btn-toggle-details").text("buy")
 				height = 0
+				controlBottomOffset = 0
 			
-			
+			$controlWrapper.css "bottom", controlBottomOffset
 			$slider.css "top", -height
 
 			
