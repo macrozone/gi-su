@@ -277,6 +277,10 @@ body.inverted .price {
   display: none;
   padding: 16px 50px;
 }
+#products-overlay .product-details .details .content {
+  padding-bottom: 25px;
+  padding-top: 25px;
+}
 @media screen and (max-width: 640px) {
   #products-overlay .product-details .details {
     padding: 16px 20px;
@@ -293,13 +297,15 @@ body.inverted .price {
 }
 #products-overlay .product-details .price_cart {
   float: right;
+  margin-top: 25px;
 }
 #products-overlay .product-details .price_cart .stock {
   display: none;
 }
 #products-overlay .product-details .price_cart .price {
   float: right;
-  font-size: 18px;
+  font-size: 32px;
+  margin-bottom: 0px;
 }
 #products-overlay .product-details .price_cart .single_add_to_cart_button {
   border: none;
@@ -307,6 +313,7 @@ body.inverted .price {
   text-transform: uppercase;
   font-size: 18px;
   padding: 0px;
+  padding-top: 0px !important;
 }
 @font-face {
   font-family: 'gisu';
