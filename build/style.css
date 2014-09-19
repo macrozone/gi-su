@@ -5,7 +5,7 @@
     More info at: http://lesselements.com
   ---------------------------------------------------*/
 .halo {
-  box-shadow: 0px 0px 60px #666;
+  box-shadow: 0px 0px 40px #666;
 }
 /*  
  * 
@@ -246,7 +246,7 @@ body.inverted .price {
   -moz-transition: all 0.2s ease-out;
   -o-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
-  box-shadow: 0px 0px 60px #666;
+  box-shadow: 0px 0px 40px #666;
 }
 #products-overlay ul li:hover img {
   /*	transform: scale(1.5);*/
