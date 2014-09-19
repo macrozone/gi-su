@@ -169,9 +169,6 @@
   opacity: 1;
   pointer-events: all;
 }
-body.inverted .price {
-  color: black !important;
-}
 #products-overlay {
   position: fixed;
   top: 0px;
@@ -303,9 +300,11 @@ body.inverted .price {
   display: none;
 }
 #products-overlay .product-details .price_cart .price {
+  color: white;
   float: right;
   font-size: 32px;
   margin-bottom: 0px;
+  line-height: 32px;
 }
 #products-overlay .product-details .price_cart .single_add_to_cart_button {
   border: none;
