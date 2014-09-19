@@ -662,6 +662,7 @@ body.menu-visible #main-menu {
 #content {
   margin-left: auto;
   margin-right: auto;
+  margin-top: 100px;
   max-width: 1024px;
 }
 #content.full-width {
@@ -762,6 +763,9 @@ body.menu-visible #main-menu {
   }
   body {
     font-size: 16px;
+  }
+  #content {
+    margin-top: 0px;
   }
   #content #content-wrapper {
     margin-left: 20px;
