@@ -6,6 +6,7 @@
 	bottom: 0px;
 	right: 0px;
 	z-index: 500;
+	background-color: black;
 	background-color: rgba(0, 0, 0, 0.8);
 
 	.controls-wrapper
@@ -15,7 +16,7 @@
 		
 		bottom: 0px;
 		height: 30px;
-			width: 100%;
+		width: 100%;
 		
 
 		.controls
@@ -26,7 +27,7 @@
 			position: relative;
 			bottom: 30px;
 
-			 .btn-close
+			.btn-close
 			{
 				left: @paddingNormal;
 				@media screen and (max-width: @mobileWidth) {
@@ -129,8 +130,8 @@
 	{
 		margin-top: 100px;
 		height: 60%;
-	
-	
+
+
 		.products
 		{
 			max-height: 100%;
@@ -152,6 +153,7 @@
 		position: absolute;
 		bottom: 0px;
 		background-color: black;
+		background-color: rgba(0, 0, 0, 0.8);
 		color: white;
 		width: 100%;
 		display: none;
@@ -163,17 +165,15 @@
 		}
 		.details
 		{
-		.content
-		{
-				padding-bottom: 20px;
-				padding-top:20px;
-			}
+			overflow: auto;
+			
 			
 			margin: 0 auto;
 			display: none;
-			padding: 16px @paddingNormal;
+			padding: 18px @paddingNormal;
+			padding-bottom: 10px;
 			@media screen and (max-width: @mobileWidth) {
-				padding: 8px @paddingMobile;
+				padding: 14px @paddingMobile;
 			}
 
 			&.active
@@ -198,7 +198,7 @@
 		.price_cart
 		{
 			float: right;
-			margin-top: 20px;
+			
 
 			.stock {
 				display: none;
