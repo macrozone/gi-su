@@ -79,25 +79,10 @@ jQuery ($) ->
 			if ( event.target == $overlay.get 0) or (event.target == $content.get 0)
 				closeOverlay
 
-		removeZoom = ->
-			$(".zoom").remove()
-		#$overlay.on "click", ".zoom", removeZoom
-		toggleZoom = (event)->
-			
-			if $(".zoom").length > 0
-				removeZoom()
-			else
-				$slide = $ event.currentTarget
-				imageSrc = $slide.find("img").attr "src"
-				$zoomImage = $ "<div class='zoom'></div>"
-				$zoomImage.appendTo $content
-				$zoomImage.css "background-image", "url('#{imageSrc}')";
-				$zoomImage.css "background-position-y", -$zoomImage.height()/2.2
-				$zoomImage.backgroundDraggable bound: false
-			return false
+		
 
 		toggleDetails = (event) ->
-			removeZoom()
+		
 			$details.toggleClass "active"
 			
 			if $details.hasClass "active" 
@@ -120,7 +105,8 @@ jQuery ($) ->
 			unless $details.hasClass "active"
 				toggleDetails event
 			else
-				toggleZoom event
+				$overlay.toggleClass "zoomed"
+			return false
 
 
 

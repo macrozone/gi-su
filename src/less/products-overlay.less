@@ -8,21 +8,6 @@
 	z-index: 500;
 	background-color: rgba(0, 0, 0, 0.8);
 
-	.zoom
-		{
-			position: absolute;
-			top: 0px;
-			bottom: 0px;
-			left: 0px;
-			right: 0px;
-			z-index: 60;
-			background-size: 100%;
-		
-
-			cursor: move;
-
-		}
-
 	.controls-wrapper
 	{
 		
@@ -126,6 +111,20 @@
 		}
 	}
 
+	&.zoomed
+	{
+		.transition(0.3s);
+		background-color: black;
+		.rsSlide
+		{
+			img
+			{
+
+				.box-shadow(none);
+				.transform(scale(2.5));
+			}
+		}
+	}
 	.content-wrapper
 	{
 		margin-top: 100px;
