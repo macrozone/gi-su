@@ -2,6 +2,7 @@
 @import (less) "bootstrap-wp.css";
 @import "woocomerce.less";
 @import "products-overlay.less";
+@import "home.less";
 @font-face {
 	font-family: 'gisu';
 	src: url('fonts/gisu.eot');
@@ -303,73 +304,6 @@ embed,iframe,object {
 
 
 
-body.home {
-	background-color: black;
-	color: white;
-	a
-	{
-		color: black;
-		.textBlur();
-
-	}
-	#masthead
-	{
-		background-color: transparent;
-		color: white;
-		ul li a {
-			color: white;
-		}
-	}
-	.page
-	{
-		@topOffset: 50px;
-		
-		position: fixed;
-		top: @topOffset;
-		right: 50px;
-		left: 50px;
-		bottom: 0px;
-		margin: 0px;
-
-		#content
-		{
-			font-size:40px;
-			margin: auto;
-			display: table;
-			width: 100%;
-			height: 100%;
-
-			#content-wrapper
-			{
-
-				display: table-cell;
-
-
-				text-align: center;
-
-				vertical-align: middle;
-
-
-				&:after{
-					content: "";
-					z-index:-10;
-
-					display: block;
-					position: fixed;
-					top: @topOffset;
-					left: 0px;
-					bottom: 0px;
-					right: 0px;
-					background-image: url(eclipse.png);
-					background-size: contain;
-					background-position: center;
-					background-repeat: no-repeat;
-				}
-			}
-		}
-	}
-	
-}
 
 #main-menu ul li a.active, #main-menu ul li a:hover, #main-menu ul li.current_page_item a {
 	.textBlur();
@@ -451,16 +385,7 @@ body.menu-visible {
 .omsc-toggle-inner {
 	padding: @paddingNormal;
 }
-.circle {
-	top: 10%;
-	left: 20%;
-	width: 60%;
-	height: 60%;
-	display: inline-block;
-	position: absolute;
-	background-image: url(eclipse.png);
-	background-repeat: no-repeat;
-}
+
 
 .fadingBackground {
 	position: fixed;

@@ -204,11 +204,20 @@ jQuery(document).ready(function(){
 
 (function() {
   jQuery(function($) {
-    var $body, $container, $inner1, $inner2, backgrounds, fade, index;
+    var $body, $circle, $container, $inner1, $inner2, backgrounds, fade, i, index;
     $body = $("body");
     if ($body.hasClass("home")) {
+      $circle = $("<div class='circle'><div class='inner'></div></div>");
+      $circle.appendTo($body);
       $container = $("<div class=\"fadingBackground\" />");
-      backgrounds = _.shuffle(["wp-content/uploads/backgrounds/1.jpg", "wp-content/uploads/backgrounds/2.jpg", "wp-content/uploads/backgrounds/3.jpg", "wp-content/uploads/backgrounds/4.jpg"]);
+      backgrounds = _.shuffle((function() {
+        var _i, _results;
+        _results = [];
+        for (i = _i = 1; _i <= 5; i = ++_i) {
+          _results.push("wp-content/uploads/backgrounds/" + i);
+        }
+        return _results;
+      })());
       index = 0;
       $inner1 = $("<div class=\"inner\"/>");
       $inner2 = $("<div class=\"inner\"/>");
@@ -229,7 +238,10 @@ jQuery(document).ready(function(){
         return $inactive.addClass("active");
       };
       window.setInterval(fade, 8000);
-      return _.defer(fade);
+      return _.delay(function() {
+        $circle.addClass("fadeOut");
+        return fade();
+      }, 2000);
     }
   });
 
