@@ -178,6 +178,17 @@
   z-index: 500;
   background-color: rgba(0, 0, 0, 0.8);
 }
+#products-overlay .zoom {
+  position: absolute;
+  top: 0px;
+  bottom: 100px;
+  left: 0px;
+  right: 0px;
+  z-index: 60;
+  background-size: cover;
+  background-position-y: center;
+  cursor: zoom-out;
+}
 #products-overlay .controls-wrapper {
   z-index: 100;
   position: absolute;
@@ -215,6 +226,9 @@
   text-transform: uppercase;
   cursor: pointer;
   font-size: 24px;
+}
+#products-overlay .rsSlide {
+  cursor: zoom-in;
 }
 #products-overlay .rsSlide,
 #products-overlay .rsVisibleNearbyWrap {
@@ -264,6 +278,7 @@
   color: white;
   width: 100%;
   display: none;
+  z-index: 100;
   box-shadow: 0px 0px 40px #666;
 }
 #products-overlay .product-details.active {

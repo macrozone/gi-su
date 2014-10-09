@@ -48,13 +48,13 @@ jQuery ($) ->
 			autoScaleSlider: true
 			keyboardNavEnabled: true
 			visibleNearby: 
-
 				enabled: true,
 				centerArea: 0.5,
 				center: true,
 				breakpoint: 640,
 				breakpointCenterArea: 0.9
 				navigateByCenterClick: true
+
 		slider = $slider.data('royalSlider');
 		$details = $ '<div class="product-details"></div>'
 		$details.appendTo $content
@@ -76,14 +76,28 @@ jQuery ($) ->
 
 		$overlay.on "click", ".btn-close", closeOverlay
 		$overlay.on "click", (event)->
-			#$("#products-overlay").remove()
-
 			if ( event.target == $overlay.get 0) or (event.target == $content.get 0)
 				closeOverlay
 
-		$overlay.on "click", ".rsSlide, .btn-toggle-details", (event) ->
-		
+		removeZoom = ->
+			$(".zoom").remove()
+		$overlay.on "click", ".zoom", removeZoom
+		toggleZoom = (event)->
+			
+			if $(".zoom").length > 0
+				removeZoom()
+			else
+				$slide = $ event.currentTarget
+				imageSrc = $slide.find("img").attr "src"
+				$zoomImage = $ "<div class='zoom'></div>"
+				$zoomImage.appendTo $content
+				$zoomImage.css "background-image", "url('#{imageSrc}')";
+			return false
+
+		toggleDetails = (event) ->
+			removeZoom()
 			$details.toggleClass "active"
+			
 			if $details.hasClass "active" 
 				detailsHeight = $details.outerHeight()
 				bottomOffset = $(window).height() - $slider.height() - 100 -100
@@ -97,9 +111,16 @@ jQuery ($) ->
 			
 			$controlWrapper.css "bottom", controlBottomOffset
 			$slider.css "top", -height
-
-			
 			return false
+
+		$overlay.on "click", ".btn-toggle-details", toggleDetails
+		$overlay.on "click", ".rsSlide", (event)->
+			unless $details.hasClass "active"
+				toggleDetails event
+			else
+				toggleZoom event
+
+
 
 		setDetails = (slideID) ->
 			$details.find(".details").removeClass "active"

@@ -8,6 +8,20 @@
 	z-index: 500;
 	background-color: rgba(0, 0, 0, 0.8);
 
+	.zoom
+		{
+			position: absolute;
+			top: 0px;
+			bottom: 100px;
+			left: 0px;
+			right: 0px;
+			z-index: 60;
+			background-size: cover;
+			background-position-y: center;
+
+			cursor: zoom-out;
+
+		}
 
 	.controls-wrapper
 	{
@@ -55,6 +69,10 @@
 				font-size: 24px;
 			}
 		}
+	}
+	.rsSlide
+	{
+		cursor: zoom-in;
 	}
 
 	.rsSlide, .rsVisibleNearbyWrap
@@ -132,6 +150,7 @@
 		color: white;
 		width: 100%;
 		display: none;
+		z-index: 100;
 		.halo;
 		&.active
 		{
@@ -162,6 +181,7 @@
 				margin-bottom: 4px;
 			}
 		}
+
 
 
 

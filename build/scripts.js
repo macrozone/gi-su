@@ -128,7 +128,7 @@ jQuery(document).ready(function(){
       }, index * 500);
     });
     return $(".products").on("click", "li", function(event) {
-      var $content, $controlWrapper, $controls, $details, $oldDetails, $overlay, $products, $slider, closeOverlay, maxWidth, setDetails, slider, startSlideId;
+      var $content, $controlWrapper, $controls, $details, $oldDetails, $overlay, $products, $slider, closeOverlay, maxWidth, removeZoom, setDetails, slider, startSlideId, toggleDetails, toggleZoom;
       maxWidth = $(window).height() / 3 * 2;
       startSlideId = $(this).index();
       $products = $(event.delegateTarget).clone();
@@ -184,8 +184,26 @@ jQuery(document).ready(function(){
           return closeOverlay;
         }
       });
-      $overlay.on("click", ".rsSlide, .btn-toggle-details", function(event) {
+      removeZoom = function() {
+        return $(".zoom").remove();
+      };
+      $overlay.on("click", ".zoom", removeZoom);
+      toggleZoom = function(event) {
+        var $slide, $zoomImage, imageSrc;
+        if ($(".zoom").length > 0) {
+          removeZoom();
+        } else {
+          $slide = $(event.currentTarget);
+          imageSrc = $slide.find("img").attr("src");
+          $zoomImage = $("<div class='zoom'></div>");
+          $zoomImage.appendTo($content);
+          $zoomImage.css("background-image", "url('" + imageSrc + "')");
+        }
+        return false;
+      };
+      toggleDetails = function(event) {
         var bottomOffset, controlBottomOffset, detailsHeight, height;
+        removeZoom();
         $details.toggleClass("active");
         if ($details.hasClass("active")) {
           detailsHeight = $details.outerHeight();
@@ -201,6 +219,14 @@ jQuery(document).ready(function(){
         $controlWrapper.css("bottom", controlBottomOffset);
         $slider.css("top", -height);
         return false;
+      };
+      $overlay.on("click", ".btn-toggle-details", toggleDetails);
+      $overlay.on("click", ".rsSlide", function(event) {
+        if (!$details.hasClass("active")) {
+          return toggleDetails(event);
+        } else {
+          return toggleZoom(event);
+        }
       });
       setDetails = function(slideID) {
         $details.find(".details").removeClass("active");
