@@ -342,10 +342,10 @@ body.home {
   color: white;
 }
 body.home .circle {
-  -webkit-transition: all 4s ease-out;
-  -moz-transition: all 4s ease-out;
-  -o-transition: all 4s ease-out;
-  transition: all 4s ease-out;
+  -webkit-transition: all 6s ease-out;
+  -moz-transition: all 6s ease-out;
+  -o-transition: all 6s ease-out;
+  transition: all 6s ease-out;
   opacity: 1;
   padding: 100px;
   z-index: 10000;
@@ -365,6 +365,7 @@ body.home .circle .inner {
   background-repeat: no-repeat;
 }
 body.home .circle.fadeOut {
+  pointer-events: none;
   opacity: 0;
 }
 body.home #masthead {
