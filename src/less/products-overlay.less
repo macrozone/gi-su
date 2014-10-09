@@ -12,20 +12,20 @@
 		{
 			position: absolute;
 			top: 0px;
-			bottom: 100px;
+			bottom: 0px;
 			left: 0px;
 			right: 0px;
 			z-index: 60;
-			background-size: cover;
-			background-position-y: center;
+			background-size: 100%;
+		
 
-			cursor: zoom-out;
+			cursor: move;
 
 		}
 
 	.controls-wrapper
 	{
-		z-index: 100;
+		
 		position: absolute;
 		
 		bottom: 0px;
@@ -47,10 +47,12 @@
 				@media screen and (max-width: @mobileWidth) {
 					left: @paddingMobile;
 				}	
+				z-index: 50;
 			}
 
 			.btn-toggle-details
 			{
+				z-index: 100;
 				right: @paddingNormal;
 				@media screen and (max-width: @mobileWidth) {
 					right: @paddingMobile;
@@ -61,7 +63,7 @@
 
 			.btn-toggle-details, .btn-close
 			{
-				z-index:100;
+				
 				position: absolute;
 				color: white;
 				text-transform: uppercase;;
@@ -72,7 +74,11 @@
 	}
 	.rsSlide
 	{
-		cursor: zoom-in;
+		
+		img
+		{
+			cursor: zoom-in;
+		}
 	}
 
 	.rsSlide, .rsVisibleNearbyWrap
@@ -160,15 +166,15 @@
 		{
 		.content
 		{
-				padding-bottom: 25px;
-				padding-top:25px;
+				padding-bottom: 20px;
+				padding-top:20px;
 			}
 			
 			margin: 0 auto;
 			display: none;
 			padding: 16px @paddingNormal;
 			@media screen and (max-width: @mobileWidth) {
-				padding: 16px @paddingMobile;
+				padding: 8px @paddingMobile;
 			}
 
 			&.active
@@ -193,7 +199,7 @@
 		.price_cart
 		{
 			float: right;
-			margin-top: 25px;
+			margin-top: 20px;
 
 			.stock {
 				display: none;

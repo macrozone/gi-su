@@ -81,7 +81,7 @@ jQuery ($) ->
 
 		removeZoom = ->
 			$(".zoom").remove()
-		$overlay.on "click", ".zoom", removeZoom
+		#$overlay.on "click", ".zoom", removeZoom
 		toggleZoom = (event)->
 			
 			if $(".zoom").length > 0
@@ -92,6 +92,8 @@ jQuery ($) ->
 				$zoomImage = $ "<div class='zoom'></div>"
 				$zoomImage.appendTo $content
 				$zoomImage.css "background-image", "url('#{imageSrc}')";
+				$zoomImage.css "background-position-y", -$zoomImage.height()/2
+				$zoomImage.backgroundDraggable bound: false
 			return false
 
 		toggleDetails = (event) ->
