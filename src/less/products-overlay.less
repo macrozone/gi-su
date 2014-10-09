@@ -109,23 +109,19 @@
 			list-style-type: none;
 		}
 		
-		li:hover img
-		{
-			/*	transform: scale(1.5);*/
-
-		}
+	
 	}
 
 	&.zoomed
 	{
-		cursor: zoom-out;
+		
 		.transition(0.3s);
 		background-color: black;
 		.rsSlide
 		{
 			img
 			{
-
+cursor: zoom-out;
 				.box-shadow(none);
 				.transform(scale(2.5));
 			}

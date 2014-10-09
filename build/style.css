@@ -253,11 +253,7 @@
   transition: all 0.2s ease-out;
   box-shadow: 0px 0px 40px #666;
 }
-#products-overlay ul li:hover img {
-  /*	transform: scale(1.5);*/
-}
 #products-overlay.zoomed {
-  cursor: zoom-out;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
@@ -265,6 +261,7 @@
   background-color: black;
 }
 #products-overlay.zoomed .rsSlide img {
+  cursor: zoom-out;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
