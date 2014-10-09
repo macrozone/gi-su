@@ -337,6 +337,30 @@ body {
   bottom: 0px;
   top: 0px;
 }
+.fadingBackground {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: -10;
+}
+.fadingBackground .inner {
+  -webkit-transition: all 6s ease-out;
+  -moz-transition: all 6s ease-out;
+  -o-transition: all 6s ease-out;
+  transition: all 6s ease-out;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  opacity: 0;
+  background-size: cover;
+}
+.fadingBackground .inner.active {
+  opacity: 1;
+}
 body.home {
   background-color: black;
   color: white;
@@ -723,31 +747,6 @@ body.menu-visible #main-menu {
 }
 .omsc-toggle-inner {
   padding: 50px;
-}
-.fadingBackground {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  z-index: -10;
-}
-.fadingBackground .inner {
-  -webkit-transition: 4s;
-  -moz-transition: 4s;
-  -ms-ransition: 4s;
-  -ot-ransition: 4s;
-  transition: 4s;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  opacity: 0;
-  background-size: cover;
-}
-.fadingBackground .inner.active {
-  opacity: 1;
 }
 @media screen and (max-width: 640px) {
   #masthead {

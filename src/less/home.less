@@ -8,6 +8,30 @@ body
 	bottom: 0px;
 	top: 0px;
 }
+
+.fadingBackground {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	z-index: -10;
+	.inner {
+		.transition(6s);
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		right: 0px;
+		bottom: 0px;
+		opacity: 0;
+		background-size: cover;
+	}
+	.inner.active {
+		opacity: 1;
+	}
+}
+
+
 body.home {
 
 	@topOffset: 50px;
