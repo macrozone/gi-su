@@ -7,7 +7,7 @@ jQuery ($) ->
 		$circle.appendTo $body
 
 		$container = $("<div class=\"fadingBackground\" />")
-		backgrounds = _.shuffle ("wp-content/uploads/backgrounds/#{i}" for i in [1..5])
+		backgrounds = _.shuffle ("wp-content/uploads/backgrounds/#{i}.jpg" for i in [1..5])
 			
 		index = 0
 		$inner1 = $("<div class=\"inner\"/>")

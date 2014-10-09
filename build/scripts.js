@@ -214,7 +214,7 @@ jQuery(document).ready(function(){
         var _i, _results;
         _results = [];
         for (i = _i = 1; _i <= 5; i = ++_i) {
-          _results.push("wp-content/uploads/backgrounds/" + i);
+          _results.push("wp-content/uploads/backgrounds/" + i + ".jpg");
         }
         return _results;
       })());
@@ -272,140 +272,6 @@ jQuery(document).ready(function(){
           return slider.updateSliderSize();
         });
       }
-    });
-  });
-
-}).call(this);
-
-(function() {
-  jQuery(function($) {
-    $(".products").each(function(index, item) {
-      var fade, visibleIndex;
-      visibleIndex = 0;
-      fade = function() {
-        var $lis;
-        $lis = $(item).find("li");
-        $lis.removeClass("visible");
-        $lis.eq(visibleIndex).addClass("visible");
-        return visibleIndex = (visibleIndex + 1) % $lis.length;
-      };
-      return setTimeout(function() {
-        return fade();
-      }, index * 500);
-    });
-    return $(".products").on("click", "li", function(event) {
-      var $content, $controlWrapper, $controls, $details, $oldDetails, $overlay, $products, $slider, closeOverlay, maxWidth, removeZoom, setDetails, slider, startSlideId, toggleDetails, toggleZoom;
-      maxWidth = $(window).height() / 3 * 2;
-      startSlideId = $(this).index();
-      $products = $(event.delegateTarget).clone();
-      $products.find("li").removeClass().find("a").find("img").addClass("rsImg");
-      $("#products-overlay").remove();
-      $oldDetails = $products.find(".details");
-      $overlay = $('<div id="products-overlay"></div>');
-      $content = $('<div class="content-wrapper"></div>');
-      $controlWrapper = $('<div class="controls-wrapper"></div>');
-      $controls = $('<div class="controls"></div>');
-      $products.appendTo($content);
-      $content.appendTo($overlay);
-      $overlay.prependTo($("body"));
-      $slider = $overlay.find("ul");
-      $slider.addClass("rsGisu");
-      $slider.royalSlider({
-        startSlideId: startSlideId,
-        autoHeight: true,
-        autoScaleSliderHeight: 400,
-        autoScaleSlider: true,
-        keyboardNavEnabled: true,
-        visibleNearby: {
-          enabled: true,
-          centerArea: 0.5,
-          center: true,
-          breakpoint: 640,
-          breakpointCenterArea: 0.9,
-          navigateByCenterClick: true
-        }
-      });
-      slider = $slider.data('royalSlider');
-      $details = $('<div class="product-details"></div>');
-      $details.appendTo($content);
-      $details.append($oldDetails);
-      $controls.append($('<a class="btn-close">Back</a>'));
-      $controls.append($('<a class="btn-toggle-details">Buy</a>'));
-      $controls.appendTo($controlWrapper);
-      $controlWrapper.appendTo($content);
-      closeOverlay = function() {
-        slider.destroy();
-        return $overlay.remove();
-      };
-      $overlay.on("click", function(event) {
-        var $target;
-        $target = $(event.target);
-        if ($target.is($overlay) || $target.is($content)) {
-          return closeOverlay();
-        }
-      });
-      $overlay.on("click", ".btn-close", closeOverlay);
-      $overlay.on("click", function(event) {
-        if ((event.target === $overlay.get(0)) || (event.target === $content.get(0))) {
-          return closeOverlay;
-        }
-      });
-      removeZoom = function() {
-        return $(".zoom").remove();
-      };
-      toggleZoom = function(event) {
-        var $slide, $zoomImage, imageSrc;
-        if ($(".zoom").length > 0) {
-          removeZoom();
-        } else {
-          $slide = $(event.currentTarget);
-          imageSrc = $slide.find("img").attr("src");
-          $zoomImage = $("<div class='zoom'></div>");
-          $zoomImage.appendTo($content);
-          $zoomImage.css("background-image", "url('" + imageSrc + "')");
-          $zoomImage.css("background-position-y", -$zoomImage.height() / 2.2);
-          $zoomImage.backgroundDraggable({
-            bound: false
-          });
-        }
-        return false;
-      };
-      toggleDetails = function(event) {
-        var bottomOffset, controlBottomOffset, detailsHeight, height;
-        removeZoom();
-        $details.toggleClass("active");
-        if ($details.hasClass("active")) {
-          detailsHeight = $details.outerHeight();
-          bottomOffset = $(window).height() - $slider.height() - 100 - 100;
-          height = -Math.min(bottomOffset - detailsHeight, 0);
-          controlBottomOffset = detailsHeight;
-          $(".btn-toggle-details").text("close");
-        } else {
-          $(".btn-toggle-details").text("buy");
-          height = 0;
-          controlBottomOffset = 0;
-        }
-        $controlWrapper.css("bottom", controlBottomOffset);
-        $slider.css("top", -height);
-        return false;
-      };
-      $overlay.on("click", ".btn-toggle-details", toggleDetails);
-      $overlay.on("click", ".rsSlide", function(event) {
-        if (!$details.hasClass("active")) {
-          return toggleDetails(event);
-        } else {
-          return toggleZoom(event);
-        }
-      });
-      setDetails = function(slideID) {
-        $details.find(".details").removeClass("active");
-        return $details.find(".details").eq(slideID).addClass("active");
-      };
-      slider.ev.on("rsAfterSlideChange", function(event) {
-        return setDetails(event.target.currSlide.id);
-      });
-      setDetails(startSlideId);
-      return false;
     });
   });
 
