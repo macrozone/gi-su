@@ -237,7 +237,7 @@ jQuery(document).ready(function(){
         $active.removeClass("active");
         return $inactive.addClass("active");
       };
-      window.setInterval(fade, 5000);
+      window.setInterval(fade, 6000);
       return _.delay(function() {
         $circle.addClass("fadeOut");
         return _.delay(function() {

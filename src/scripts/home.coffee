@@ -29,7 +29,7 @@ jQuery ($) ->
 			$inactive.addClass "active"
 			
 
-		window.setInterval fade, 5000
+		window.setInterval fade, 6000
 		_.delay ->
 			$circle.addClass "fadeOut"
 			
