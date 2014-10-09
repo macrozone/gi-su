@@ -92,7 +92,7 @@ jQuery ($) ->
 				$zoomImage = $ "<div class='zoom'></div>"
 				$zoomImage.appendTo $content
 				$zoomImage.css "background-image", "url('#{imageSrc}')";
-				$zoomImage.css "background-position-y", -$zoomImage.height()/1.5
+				$zoomImage.css "background-position-y", -$zoomImage.height()/2.2
 				$zoomImage.backgroundDraggable bound: false
 			return false
 
