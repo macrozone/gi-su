@@ -179,6 +179,9 @@
   background-color: black;
   background-color: rgba(0, 0, 0, 0.8);
 }
+#products-overlay .rsActiveSlide {
+  z-index: 10;
+}
 #products-overlay .controls-wrapper {
   position: absolute;
   bottom: 0px;
@@ -254,6 +257,7 @@
   /*	transform: scale(1.5);*/
 }
 #products-overlay.zoomed {
+  cursor: zoom-out;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;

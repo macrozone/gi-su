@@ -115,7 +115,10 @@ jQuery ($) ->
 			$details.find(".details").eq slideID
 			.addClass "active"
 		
-
+		slider.ev.on "rsBeforeAnimStart", (event) ->
+			$(".rsSlide").removeClass "rsActiveSlide"
+			$(event.target.currSlide.holder[0]).addClass "rsActiveSlide"
+			
 		slider.ev.on "rsAfterSlideChange", (event) ->
 			setDetails event.target.currSlide.id
 		setDetails startSlideId

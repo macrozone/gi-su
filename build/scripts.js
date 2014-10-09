@@ -229,6 +229,10 @@ jQuery(document).ready(function(){
         $details.find(".details").removeClass("active");
         return $details.find(".details").eq(slideID).addClass("active");
       };
+      slider.ev.on("rsBeforeAnimStart", function(event) {
+        $(".rsSlide").removeClass("rsActiveSlide");
+        return $(event.target.currSlide.holder[0]).addClass("rsActiveSlide");
+      });
       slider.ev.on("rsAfterSlideChange", function(event) {
         return setDetails(event.target.currSlide.id);
       });
