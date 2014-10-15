@@ -53,9 +53,19 @@
 .woocommerce-page table.cart a.remove:hover {
   background: none;
 }
+.woocommerce ul.chosen-results li {
+  color: black;
+}
+.woocommerce input,
+.woocommerce textarea {
+  padding: 4px;
+}
 .woocommerce form .form-row-last,
 .woocommerce .woocommerce-page form .form-row-last {
   float: none;
+}
+.woocommerce label {
+  margin-bottom: 0px;
 }
 .woocommerce .woocommerce-message {
   background: none !important;

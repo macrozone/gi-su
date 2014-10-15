@@ -4,12 +4,31 @@
 {
 	background:none;
 }
+
+
 .woocommerce
 {
 
+	ul.chosen-results
+	{
+		li
+		{
+			color: black;
+		}
+	}
+
+	input, textarea
+	{
+		padding: 4px;
+	}
 	form .form-row-last, .woocommerce-page form .form-row-last
 	{
 		float: none;
+	}
+
+	label
+	{
+		margin-bottom: 0px;
 	}
 
 	.woocommerce-message
@@ -22,7 +41,7 @@
 	{
 		.box();
 		.blur() !important;
-	
+
 	}
 
 	.woocommerce-error, .woocommerce-info, .woocommerce-message, .woocommerce-page .woocommerce-error, .woocommerce-page .woocommerce-info, .woocommerce-page .woocommerce-message
@@ -84,7 +103,7 @@
 		padding-top:10px !important;
 		font-size: 16px !important;
 		.box();
-	
+
 		.rounded(8px) !important;
 
 		background: white !important;
@@ -103,9 +122,9 @@
 		clear: none;
 		width: 33.33333%;
 
-@media screen and (max-width: @mobileWidth) {
+		@media screen and (max-width: @mobileWidth) {
 
-}
+		}
 		margin-top:40px;
 		position: relative;
 		
