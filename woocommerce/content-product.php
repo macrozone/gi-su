@@ -61,6 +61,7 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 
 			
 			woocommerce_template_single_price();
+			
 			woocommerce_template_single_add_to_cart();
 		?>
 		</div>

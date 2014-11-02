@@ -1,3 +1,8 @@
+/** main style file
+
+this was not initially a less-file, so not everything is propery done.
+There are for example some vendor-prefixes
+**/
 /*---------------------------------------------------
     LESS Elements 0.9
   ---------------------------------------------------
@@ -328,7 +333,12 @@
   float: right;
 }
 #products-overlay .product-details .price_cart .stock {
+  text-transform: uppercase;
   display: none;
+  font-size: 18px;
+}
+#products-overlay .product-details .price_cart .stock.out-of-stock {
+  display: block;
 }
 #products-overlay .product-details .price_cart .price {
   color: white;
@@ -344,15 +354,6 @@
   font-size: 18px;
   padding: 0px;
   padding-top: 0px !important;
-}
-body {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  top: 0px;
 }
 .fadingBackground {
   position: fixed;
@@ -388,8 +389,8 @@ body.home .circle {
   -o-transition: all 7s ease-out;
   transition: all 7s ease-out;
   opacity: 1;
-  padding: 100px;
-  z-index: 10000;
+  padding: 0px;
+  z-index: 200;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -457,6 +458,13 @@ body {
   background-color: black;
   color: white;
   font-size: 16px;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  top: 0px;
 }
 .alignleft {
   display: inline;
@@ -588,7 +596,6 @@ object {
   color: white;
   pointer-events: none;
   position: relative;
-  z-index: 200;
   top: 0px;
   margin: 0 auto;
   padding: 30px 50px;
@@ -765,6 +772,7 @@ body.menu-visible #main-menu {
 .omsc-toggle-inner {
   padding: 50px;
 }
+/** mobile **/
 @media screen and (max-width: 640px) {
   #masthead {
     height: 90px;
@@ -774,7 +782,6 @@ body.menu-visible #main-menu {
     margin: 0px;
     position: absolute;
     padding-top: 72px;
-    padding-left: 20px;
     padding-bottom: 20px;
     left: 0px;
     top: 0px;
@@ -784,17 +791,18 @@ body.menu-visible #main-menu {
     -webkit-transform: translate(0px, -100%);
     /* Chrome, Safari, Opera */
     transform: translate(0px, -100%);
+    background: #f5f5f5;
+    background: -webkit-gradient(linear, left bottom, left center, color-stop(0, rgba(0, 0, 0, 0)), color-stop(1, rgba(0, 0, 0, 0.8)));
+    background: -ms-linear-gradient(bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+    background: -moz-linear-gradient(center bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+    background: -o-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(0, 0, 0, 0.8)', endColorstr='rgba(0, 0, 0, 0)', GradientType=0);
   }
   #main-menu .menu-mainmenu-container {
+    padding-left: 20px;
     overflow: hidden;
     margin-top: 8px;
-    padding-bottom: 8px;
-    background: #f5f5f5;
-    background: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgba(0, 0, 0, 0)), color-stop(1, #000000));
-    background: -ms-linear-gradient(bottom, rgba(0, 0, 0, 0), #000000);
-    background: -moz-linear-gradient(center bottom, rgba(0, 0, 0, 0) 0%, #000000 100%);
-    background: -o-linear-gradient(#000000, rgba(0, 0, 0, 0));
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='rgba(0, 0, 0, 0)', GradientType=0);
+    padding-bottom: 16px;
   }
   #main-menu .sub-menu {
     display: none;

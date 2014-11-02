@@ -1,4 +1,6 @@
 
+numberOfImages = 3
+
 jQuery ($) ->
 	$body = $("body")
 	if $body.hasClass "home"
@@ -7,7 +9,7 @@ jQuery ($) ->
 		$circle.appendTo $body
 
 		$container = $("<div class=\"fadingBackground\" />")
-		backgrounds = _.shuffle ("wp-content/uploads/backgrounds/#{i}.jpg" for i in [1..5])
+		backgrounds = _.shuffle ("wp-content/uploads/backgrounds/#{i}.jpg" for i in [1..numberOfImages])
 			
 		index = 0
 		$inner1 = $("<div class=\"inner\"/>")
@@ -29,12 +31,13 @@ jQuery ($) ->
 			$inactive.addClass "active"
 			
 
-		window.setInterval fade, 6000
+		window.setInterval fade, 8000
+		_.delay fade, 0
 		_.delay ->
 			$circle.addClass "fadeOut"
 			
 			_.delay ->
 				$circle.remove()
 			, 8000
-		, 3000
+		, 2000
 

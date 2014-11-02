@@ -1,3 +1,9 @@
+/** main style file
+
+this was not initially a less-file, so not everything is propery done.
+There are for example some vendor-prefixes
+**/
+
 @import "variables.less";
 @import (less) "bootstrap-wp.css";
 @import "woocomerce.less";
@@ -34,7 +40,15 @@ body {
 	background-color: black;
 	color: white;
 	font-size: 16px;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	top: 0px;
 }
+
 .alignleft {
 	display: inline;
 	float: left;
@@ -171,7 +185,7 @@ embed,iframe,object {
 	color: white;
 	pointer-events: none;
 	position: relative;
-	z-index: 200;
+	
 	top: 0px;
 	
 	margin: 0 auto;
@@ -389,7 +403,7 @@ body.menu-visible {
 
 
 
-
+/** mobile **/
 @media screen and (max-width: @mobileWidth) {
 
 
@@ -402,7 +416,7 @@ body.menu-visible {
 		margin: 0px;
 		position: absolute;
 		padding-top: 72px;
-		padding-left: @paddingMobile;
+		
 		padding-bottom: 20px;
 		left: 0px;
 		top: 0px;
@@ -411,14 +425,15 @@ body.menu-visible {
 		-ms-transform: translate(0px,-100%); /* IE 9 */
 		-webkit-transform: translate(0px,-100%); /* Chrome, Safari, Opera */
 		transform: translate(0px,-100%);
-
+		.gradient(@start: rgba(0,0,0,0), @stop:rgba(0,0,0,0.8), @startPosition:center);
+		
 		.menu-mainmenu-container
 		{
+			padding-left: @paddingMobile;
 			overflow: hidden;
 			margin-top: 8px;
 			
-			padding-bottom: 8px;
-			.gradient(@start: rgba(0,0,0,0), @stop:rgba(0,0,0,1));
+			padding-bottom: 16px;
 		}
 		.sub-menu
 		{

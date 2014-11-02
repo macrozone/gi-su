@@ -87,6 +87,8 @@
 		color: black;
 
 	}
+
+	
 	ul
 	{
 		margin: 0px;
@@ -202,8 +204,16 @@ cursor: zoom-out;
 			
 
 			.stock {
+				text-transform: uppercase;
 				display: none;
+				font-size: 18px;
+				&.out-of-stock
+				{
+					display: block;
+				}
 			}
+
+
 
 			.price{
 				color: white;

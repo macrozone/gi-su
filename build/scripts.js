@@ -49,6 +49,10 @@ jQuery(document).ready(function(){
 
 
 (function() {
+  var numberOfImages;
+
+  numberOfImages = 3;
+
   jQuery(function($) {
     var $body, $circle, $container, $inner1, $inner2, backgrounds, fade, i, index;
     $body = $("body");
@@ -59,7 +63,7 @@ jQuery(document).ready(function(){
       backgrounds = _.shuffle((function() {
         var _i, _results;
         _results = [];
-        for (i = _i = 1; _i <= 5; i = ++_i) {
+        for (i = _i = 1; 1 <= numberOfImages ? _i <= numberOfImages : _i >= numberOfImages; i = 1 <= numberOfImages ? ++_i : --_i) {
           _results.push("wp-content/uploads/backgrounds/" + i + ".jpg");
         }
         return _results;
@@ -83,13 +87,14 @@ jQuery(document).ready(function(){
         $active.removeClass("active");
         return $inactive.addClass("active");
       };
-      window.setInterval(fade, 6000);
+      window.setInterval(fade, 8000);
+      _.delay(fade, 0);
       return _.delay(function() {
         $circle.addClass("fadeOut");
         return _.delay(function() {
           return $circle.remove();
         }, 8000);
-      }, 3000);
+      }, 2000);
     }
   });
 
@@ -97,11 +102,6 @@ jQuery(document).ready(function(){
 
 (function() {
   jQuery(function($) {
-    $(window).on("keypress", function(event) {
-      if (event.which === 161) {
-        return $("body").toggleClass("inverted");
-      }
-    });
     $(".logo, #menu-button").on("click", function() {
       return $("body").toggleClass("menu-visible");
     });
