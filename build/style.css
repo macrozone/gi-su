@@ -67,6 +67,11 @@ There are for example some vendor-prefixes
   text-shadow: 0px 0px 10px #ffffff;
   font-size: 24px;
 }
+@media screen and (max-width: 640px) {
+  .woocommerce .category-name {
+    font-size: 14px;
+  }
+}
 .woocommerce ul.chosen-results li {
   color: black;
 }
