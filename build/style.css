@@ -177,6 +177,7 @@ There are for example some vendor-prefixes
   box-sizing: border-box;
 }
 .woocommerce ul.products li {
+  width: 100%;
   padding: 0px 10px;
   -webkit-transition: all 5s ease-out;
   -moz-transition: all 5s ease-out;
