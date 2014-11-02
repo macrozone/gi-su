@@ -98,8 +98,14 @@ function gisu_scripts() {
 	
 
     // load gisu styles
-	wp_enqueue_style( 'gisu-style', get_stylesheet_uri() );
+	
 
+	$handle = 'gi-su-style';
+	$src =  get_template_directory_uri() . '/style.css';
+	$deps = '';
+	$ver = filemtime( get_template_directory() . '/style.css');
+	$media = '';
+	wp_enqueue_style( $handle, $src, $deps, $ver, $media );
 
 
 	wp_enqueue_script( 'gisu-scripts', get_template_directory_uri() . '/build/scripts.js', array('jquery') );
