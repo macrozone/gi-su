@@ -37,10 +37,12 @@ if ( 0 == ( $woocommerce_loop['loop'] - 1 ) % $woocommerce_loop['columns'] || 1 
 if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 	$classes[] = 'last';
 ?>
+
+
 <li>
 
 	<?php do_action( 'woocommerce_before_shop_loop_item' ); ?>
-
+	
 	<a href="<?php the_permalink(); ?>">
 
 		<?php
@@ -56,17 +58,29 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 	<div class="details">
 	
 	<div class="content"><?php the_content();?></div>
-	<div class="price_cart">
-		<?php
-
-			
-			woocommerce_template_single_price();
-			
-			woocommerce_template_single_add_to_cart();
-		?>
+		<div class="price_cart">
+			<?php
+				woocommerce_template_single_price();
+				woocommerce_template_single_add_to_cart();
+			?>
 		</div>
-		</div>
+	</div>
 	</a>
+	<p class="category-name">
+
+	<?php
+
+	$terms = get_the_terms( $product->ID, 'product_cat' );
+	foreach($terms as $term)
+	{
+		if(!empty($term->parent))
+		{
+			echo $term->name;
+			break;
+		}
+	}
+	?>
+	</p>
 
 
 	<?php //do_action( 'woocommerce_after_shop_loop_item' ); ?>

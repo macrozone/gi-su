@@ -138,7 +138,8 @@ jQuery(document).ready(function(){
         return visibleIndex = (visibleIndex + 1) % $lis.length;
       };
       return setTimeout(function() {
-        return fade();
+        fade();
+        return setInterval(fade, 10000);
       }, index * 500);
     });
     return $(".products").on("click", "li", function(event) {

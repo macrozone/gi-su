@@ -10,7 +10,7 @@ jQuery ($) ->
 			
 		setTimeout ->
 			fade()
-		#	setInterval fade, 10000
+			setInterval fade, 10000
 		, index*500
 
 		

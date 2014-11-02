@@ -58,6 +58,15 @@ There are for example some vendor-prefixes
 .woocommerce-page table.cart a.remove:hover {
   background: none;
 }
+.woocommerce .category-name {
+  text-transform: uppercase;
+  padding: 20px 0px;
+  text-align: center;
+  -webkit-text-shadow: 0px 0px 10px #ffffff;
+  -moz-text-shadow: 0px 0px 10px #ffffff;
+  text-shadow: 0px 0px 10px #ffffff;
+  font-size: 24px;
+}
 .woocommerce ul.chosen-results li {
   color: black;
 }
@@ -196,6 +205,9 @@ There are for example some vendor-prefixes
 }
 #products-overlay .rsActiveSlide {
   z-index: 10;
+}
+#products-overlay .category-name {
+  display: none;
 }
 #products-overlay .controls-wrapper {
   position: absolute;

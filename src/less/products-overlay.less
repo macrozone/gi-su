@@ -9,10 +9,15 @@
 	background-color: black;
 	background-color: rgba(0, 0, 0, 0.8);
 
-.rsActiveSlide
-{
-	z-index:10;
-}
+	.rsActiveSlide
+	{
+		z-index:10;
+	}
+
+	.category-name
+	{
+		display: none;
+	}
 	.controls-wrapper
 	{
 		
@@ -111,7 +116,7 @@
 			list-style-type: none;
 		}
 		
-	
+
 	}
 
 	&.zoomed
@@ -123,7 +128,7 @@
 		{
 			img
 			{
-cursor: zoom-out;
+				cursor: zoom-out;
 				.box-shadow(none);
 				.transform(scale(2.5));
 			}
