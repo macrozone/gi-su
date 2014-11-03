@@ -62,10 +62,7 @@ There are for example some vendor-prefixes
   text-transform: uppercase;
   padding: 40px 0px;
   text-align: center;
-  -webkit-text-shadow: 0px 0px 10px #ffffff;
-  -moz-text-shadow: 0px 0px 10px #ffffff;
-  text-shadow: 0px 0px 10px #ffffff;
-  font-size: 24px;
+  font-size: 17px;
 }
 @media screen and (max-width: 640px) {
   .woocommerce .category-name {
