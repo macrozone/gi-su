@@ -7,7 +7,7 @@ livereload = require 'gulp-livereload'
 concat = require 'gulp-continuous-concat'
 uglify = require 'gulp-uglify'
 gulpif = require 'gulp-if'
-
+minifyCSS = require 'gulp-minify-css'
 gutil = require 'gulp-util'
 lessGlob = "./less/**/*.less"
 build = "../build"
@@ -20,6 +20,7 @@ onError = (error) ->
 gulp.task "styles", ->
 	gulp.src "less/style.less"
 	.pipe less().on "error", onError
+	.pipe minifyCSS keepBreaks: true
 	.pipe gulp.dest build
 	.on "error", onError
 
@@ -29,7 +30,7 @@ gulp.task "scripts", ->
 	.pipe watch()
 	.pipe gulpif /[.]coffee$/, coffee().on "error", onError
 	.pipe concat "scripts.js"
-	#.pipe uglify()
+	.pipe uglify()
 	.pipe gulp.dest build
 	.pipe livereload()
 	.on "error", onError
