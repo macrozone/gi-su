@@ -2,7 +2,7 @@ jQuery ($) ->
 
 	
 
-	$(".logo, #menu-button").on "click", ->
+	$(document).on "click", ".logo, #menu-button", ->
 		$("body").toggleClass "menu-visible"
 	###
 	toggle / gallery fix *
