@@ -59,7 +59,6 @@ There are for example some vendor-prefixes
   background: none;
 }
 .woocommerce .category-name {
-  text-transform: uppercase;
   padding: 40px 0px;
   text-align: center;
   font-size: 17px;
